@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/640x1136.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/750x1334.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1242x2208.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1125x2436.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/828x1792.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1242x2688.png">
+<link rel="apple-touch-startup-image" media="(device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1080x2340.png">
+<link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1170x2532.png">
+<link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1284x2778.png">
+<link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1179x2556.png">
+<link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1290x2796.png">
+<link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1206x2622.png">
+<link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/1320x2868.png">
+<meta name="theme-color" content="#FBF8F1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="AWN">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>The Animal Welfare Network (AWN)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#6B2308;--gold:#B08D3C;--ink:#2A1A12;--green:#17301F;--ivory:#FBF8F1;--sand:#F1EADB;--line:#DCCDA6;
+--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--body:Lora,Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 1.06rem/1.75 var(--body)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0;color:var(--maroon)}
+h2{font-size:clamp(2rem,4.5vw,2.9rem);margin-bottom:.6em}
+p{margin:0 0 1.1em;max-width:62ch}
+header.nav{position:sticky;top:0;z-index:5;background:rgba(251,248,241,.95);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-weight:600;font-size:1.25rem;color:var(--maroon)}
+.brand img{width:38px;height:38px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.92rem;overflow-x:auto}
+.nav li a{text-decoration:none;white-space:nowrap}
+.nav li a:hover{color:var(--gold)}
+.hero{padding:56px 0 64px;text-align:center;border-bottom:1px solid var(--line);background:linear-gradient(var(--ivory),var(--sand))}
+.hero .wrap{display:block;max-width:760px}
+.hero img{width:210px;display:block;margin:0 auto 20px}
+.bism{font-style:italic;color:var(--gold);margin:0 auto 1em}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);color:var(--green);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.orn,section>.wrap>h2::after{display:block;width:110px;height:6px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:22px auto}
+section>.wrap>h2::after{width:72px;margin:.5em auto 0}
+.motto{font-variant:small-caps;letter-spacing:.28em;color:var(--maroon);font-size:1.15rem;margin:0 auto 1.4em}
+.hero p.lead{margin:0 auto 1.8em;font-size:1.12rem}
+.hero .btns{justify-content:center}
+section>.wrap>h2{text-align:center}
+section>.wrap>p{margin-left:auto;margin-right:auto;text-align:center}
+.agenda{margin:0 auto}
+.pillars{background:var(--green);color:var(--ivory)}
+.pillars .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.pillars .wrap>div{padding:30px 28px;border-left:1px solid rgba(176,141,60,.55)}
+.pillars .wrap>div:first-child{border-left:0}
+.pillars h3{color:#E7D3A0;font-size:1.45rem;margin-bottom:.3em}
+.pillars p{margin:0;font-size:.93rem;line-height:1.6}
+.nav li a{font-variant:small-caps;letter-spacing:.08em;font-size:1rem}
+section{padding:80px 0;border-bottom:1px solid var(--line)}
+.sand{background:var(--sand)}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.35;color:var(--green);border-left:3px solid var(--gold);padding-left:24px;margin:1.6em 0;max-width:34em}
+.quote small{display:block;font:400 .9rem var(--body);font-style:normal;color:var(--maroon);margin-top:.6em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.num{font-family:var(--serif);font-size:clamp(5rem,12vw,8.5rem);line-height:.9;color:var(--maroon);font-weight:600}
+.num + p{margin-top:.8em}
+.teach{border-top:1px solid var(--line);padding:20px 0}
+.teach h3{font-size:1.5rem;margin-bottom:.3em}
+.teach p{margin:0;font-size:.98rem}
+.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.face{padding:22px 22px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ivory)}
+.face h3{font-size:1.45rem;color:var(--green)}
+.face .role{font-size:.85rem;color:var(--gold);margin:.2em 0 .6em}
+.face p{font-size:.95rem;line-height:1.55;margin:0}
+.memorial{background:var(--green);color:var(--ivory);border:0}
+.memorial h2{color:#E7D3A0}
+.memorial .quote{color:#F1EADB;border-color:var(--gold)}
+.memorial .quote small{color:#E7D3A0}
+.agenda{list-style:none;margin:0;padding:0;counter-reset:a;max-width:46em}
+.agenda li{padding:16px 0 16px 56px;border-top:1px solid var(--line);position:relative;counter-increment:a}
+.agenda li::before{content:counter(a);position:absolute;left:0;top:10px;font:600 1.9rem var(--serif);color:var(--gold)}
+.founder{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.founder img{width:100%;max-width:340px;display:block;justify-self:center}
+.sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--maroon);margin:0}
+footer{background:var(--maroon);color:#F1EADB;padding:56px 0 40px;text-align:center}
+footer img{width:96px;height:96px;margin-bottom:12px}
+footer h2{color:#F1EADB;margin-bottom:.3em}
+footer p{margin:0 auto 1em;max-width:50ch}
+footer a{color:#E7D3A0}
+footer .fine{font-size:.85rem;opacity:.8;margin-top:2em}
+@media(max-width:780px){.hero .wrap,.two,.founder{grid-template-columns:1fr;gap:32px}.pillars .wrap{grid-template-columns:1fr}.pillars .wrap>div{border-left:0;border-top:1px solid rgba(176,141,60,.55)}.nav .wrap{height:auto;flex-wrap:wrap;padding-top:8px;padding-bottom:6px}.nav ul{width:100%;padding-bottom:4px}section{padding:56px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px}
+.gal figure{margin:0;border:1px solid var(--line);padding:8px;background:var(--ivory)}
+.gal figure.wide{grid-column:1/-1}
+.gal img{width:100%;display:block;border:1px solid var(--gold)}
+.gal figcaption{font-style:italic;font-size:.95rem;color:var(--maroon);padding:12px 6px 4px;text-align:center;line-height:1.5}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:36px}
+.role{display:flex;flex-direction:column;border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--ivory);padding:28px 26px}
+.role h3{font-size:1.7rem;margin-bottom:.3em}
+.role p{font-size:.97rem;line-height:1.6;flex:1}
+.role .btn{align-self:flex-start;font-size:.9rem;padding:10px 22px}
+@media(max-width:780px){.gal{grid-template-columns:1fr}}
+
+/* ---- refined professional layer ---- */
+body{font-size:1.04rem}
+header.nav{box-shadow:0 2px 14px rgba(42,26,18,.08);border-bottom:2px solid var(--gold)}
+.brand{letter-spacing:.14em}
+.btn{display:inline-block;padding:12px 26px;border:1px solid var(--maroon);background:var(--maroon);color:var(--ivory);text-decoration:none;font-size:.95rem;border-radius:2px;cursor:pointer;font-family:var(--body)}
+.btn.alt{background:transparent;color:var(--maroon)}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--ivory)}
+.btn.gold{background:#C9A64F;border-color:#C9A64F;color:#2A1A12}.btn.gold:hover{background:#F8EBC6;border-color:#F8EBC6;color:var(--maroon)}
+.btn{letter-spacing:.05em;transition:background .2s,transform .2s}
+.hero{background:radial-gradient(ellipse at 50% 0%,#8C3512 0%,#6B2308 45%,#3A1204 100%);color:#F1EADB;padding:76px 0 120px;border-bottom:0}
+.hero img{width:240px;filter:drop-shadow(0 14px 28px rgba(0,0,0,.45))}
+.hero .bism{color:#E7D3A0}
+.hero h1{color:#F8EBC6}
+.hero .orn{border-color:#C9A64F}
+.hero .motto{color:#E7D3A0}
+.hero p.lead{color:#F1EADB}
+.hero .btn{background:#C9A64F;border-color:#C9A64F;color:#2A1A12}
+.hero .btn.alt{background:transparent;color:#F8EBC6;border-color:#E7D3A0}
+.hero .btn:hover{background:#F8EBC6;border-color:#F8EBC6;color:var(--maroon)}
+.pillars{background:none;position:relative;margin-top:-62px;padding-bottom:12px}
+.pillars .wrap{max-width:1080px;gap:22px}
+.pillars .wrap>div,.pillars .wrap>div:first-child{background:#fff;color:var(--ink);border:1px solid var(--line);border-top:3px solid var(--gold);padding:28px 26px;box-shadow:0 14px 34px rgba(42,26,18,.14)}
+.pillars h3{color:var(--maroon)}
+section{border-bottom:0;padding:92px 0}
+.faces{gap:20px;border:0}
+.face{border:1px solid var(--line);border-top:3px solid var(--gold);background:#fff;box-shadow:0 6px 18px rgba(42,26,18,.06);transition:transform .2s,box-shadow .2s}
+.face h3{color:var(--maroon)}
+.role{background:#fff;box-shadow:0 6px 18px rgba(42,26,18,.07);transition:transform .2s,box-shadow .2s}
+.face:hover,.role:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(42,26,18,.14)}
+.gal figure{background:#fff;box-shadow:0 10px 28px rgba(42,26,18,.12);padding:10px}
+.founder img{filter:drop-shadow(0 12px 24px rgba(42,26,18,.2))}
+.quote{background:linear-gradient(90deg,rgba(176,141,60,.10),transparent);padding:18px 24px}
+.memorial{background:linear-gradient(160deg,#1F3D29,#12261A)}
+.agenda li{padding:20px 0 20px 72px}
+.agenda li::before{content:counter(a);top:16px;width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem;color:var(--maroon)}
+footer{background:linear-gradient(180deg,#6B2308,#3A1204);border-top:4px solid var(--gold)}
+@media(max-width:780px){.hero{padding:52px 0 96px}.hero img{width:190px}.pillars{margin-top:-50px}section{padding:60px 0}}
+
+/* cream main page */
+.hero{background:linear-gradient(#FFFDF8,#F6F0E2);color:var(--ink);padding:68px 0 112px}
+.hero img{filter:drop-shadow(0 10px 22px rgba(107,35,8,.28))}
+.hero .bism{color:var(--gold)}
+.hero h1{color:var(--green)}
+.hero .orn{border-color:var(--gold)}
+.hero .motto{color:var(--maroon)}
+.hero p.lead{color:var(--ink);margin-bottom:0}
+@media(max-width:780px){.hero{padding:48px 0 96px}}
+
+/* mobile + desktop fit */
+html,body{overflow-x:hidden}
+.nav nav{min-width:0}
+@media(max-width:780px){.nav nav{width:100%}.nav ul{gap:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav ul::-webkit-scrollbar{display:none}.nav .wrap{justify-content:center}.hero h1{letter-spacing:.03em}.wrap{padding:0 20px}}
+@media(max-width:780px){.nav ul{flex-wrap:wrap;justify-content:center;overflow:visible;gap:2px 16px}.nav li a{font-size:.95rem}}
+
+h3.sub{text-align:center;font-size:clamp(1.7rem,3.5vw,2.2rem);margin:64px 0 14px}
+.team{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:28px}
+.member{margin:0;flex:0 0 calc(25% - 15px);text-align:center;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:12px 12px 20px;box-shadow:0 6px 18px rgba(42,26,18,.08)}
+.ph{aspect-ratio:5/6;overflow:hidden;border:1px solid var(--gold);border-radius:150px 150px 3px 3px;background:#EFE6D0}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.member h3{font-size:1.35rem;color:var(--green);margin:16px 0 4px}
+.member span{display:block;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--maroon);line-height:1.45;padding:0 4px}
+@media(max-width:900px){.member{flex-basis:calc(33.333% - 14px)}}
+@media(max-width:780px){.team{gap:14px}.member{flex-basis:calc(50% - 7px);padding:8px 8px 16px}.ph{border-radius:90px 90px 3px 3px}.member h3{font-size:1.15rem}.member span{font-size:.7rem}}
+.member p{font-size:.88rem;line-height:1.55;margin:10px 0 0;padding:0 6px;max-width:none;text-align:center}
+@media(max-width:780px){.member p{font-size:.8rem;line-height:1.5;padding:0 2px}}
+
+.gal.three{display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+.gal.three figure{flex:0 0 calc(33.333% - 15px)}
+.gal.three figcaption{font-size:.88rem}
+.band{background:linear-gradient(160deg,#6B2308,#3A1204);color:#F1EADB;padding:76px 0;border-top:4px solid var(--gold)}
+.band h2{color:#F8EBC6}.band p{color:#F1EADB;margin-bottom:1.5em}
+.btn.gold{background:#C9A64F;border-color:#C9A64F;color:#2A1A12}.btn.gold:hover{background:#F8EBC6;border-color:#F8EBC6;color:var(--maroon)}
+.book{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;align-items:center;margin-top:20px}
+.book img{width:100%;max-width:300px;justify-self:center;border:1px solid var(--line);box-shadow:0 18px 40px rgba(42,26,18,.25)}
+.partners{grid-template-columns:1fr 1.25fr;align-items:center;margin-top:30px}
+.pcard{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:30px 28px;box-shadow:0 6px 18px rgba(42,26,18,.07)}
+.pcard h3{font-size:1.7rem;margin-bottom:.1em}.pcard p{font-size:.98rem}.pcard p:first-of-type{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
+.social{display:flex;justify-content:center;gap:16px;margin:18px 0 24px}
+.social a{width:48px;height:48px;border:1px solid #C9A64F;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#F1EADB;transition:background .25s,color .25s}
+.social a:hover{background:#C9A64F;color:#3A1204}.social svg{width:22px;height:22px}
+.js .fade{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
+.js .fade.in{opacity:1;transform:none}
+@media(max-width:780px){.gal.three{gap:12px}.gal.three figure{flex-basis:calc(50% - 6px)}.gal.three figcaption{font-size:.8rem}.book,.partners{grid-template-columns:1fr;gap:28px}.band{padding:56px 0}}
+
+/* round 5 */
+.nav ul{gap:16px}.nav li a{font-size:.93rem;letter-spacing:.05em}
+.gal.three figure.adoptable{position:relative}
+.badge{position:absolute;top:20px;left:20px;z-index:1;background:var(--maroon);color:#F8EBC6;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px}
+.statrow{text-align:center}.statrow p{margin-left:auto;margin-right:auto}
+.memorial .wrap>p{text-align:left;margin-left:auto;margin-right:auto}
+.memorial .quote{margin-left:auto;margin-right:auto}
+.places{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.place{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:26px 20px;text-align:center;box-shadow:0 6px 18px rgba(42,26,18,.07)}
+.place svg{width:30px;height:30px;color:var(--gold);display:block;margin:0 auto 8px}
+.place h3{font-size:1.6rem;color:var(--green)}
+.pay{max-width:460px;margin:30px auto 0;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:30px 26px;text-align:center;box-shadow:0 10px 28px rgba(42,26,18,.1)}
+.paylabel{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.paynum{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--maroon);margin:4px 0 16px;letter-spacing:.04em}
+.paynote{font-size:.88rem;margin:18px auto 0;text-align:center}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:30;background:linear-gradient(90deg,#B08D3C,#E7D3A0);transform:scaleX(0);transform-origin:0 50%}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:var(--maroon);color:#F8EBC6;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease,background .3s;box-shadow:0 8px 20px rgba(42,26,18,.28)}
+.totop.show{opacity:1;pointer-events:auto;transform:none}.totop:hover{background:var(--green)}
+.totop svg{width:22px;height:22px}
+.js .fade{opacity:0;transform:translateY(26px);transition:opacity 1.9s cubic-bezier(.22,.61,.36,1),transform 1.9s cubic-bezier(.22,.61,.36,1)}
+.js .fade.in{opacity:1;transform:none}
+.js .gal figure:nth-child(2n){transition-delay:.18s}.js .gal figure:nth-child(3n){transition-delay:.32s}
+@media(max-width:780px){.places{grid-template-columns:1fr 1fr;gap:14px}.place h3{font-size:1.35rem}.paynum{font-size:2.1rem}.nav ul{gap:2px 14px}}
+
+.gal.adopt{max-width:780px;margin-left:auto;margin-right:auto}
+.gal.adopt figcaption{font-size:1rem}.gal.adopt .btn{margin:12px 0 6px;font-size:.9rem;padding:10px 26px;font-style:normal}
+.watch{display:inline-block;margin:10px 0 4px;padding:7px 18px;border:1px solid var(--gold);color:var(--maroon);text-decoration:none;font-size:.85rem;letter-spacing:.06em;font-style:normal;transition:background .25s,color .25s}
+.watch:hover{background:var(--maroon);color:#F8EBC6}
+.eplogo{display:inline-block;background:#2DB34A;color:#fff;font:700 1.6rem/1 var(--body);letter-spacing:-.03em;padding:13px 24px;border-radius:14px;margin-bottom:14px}
+@media(max-width:780px){.gal.adopt{grid-template-columns:1fr}}
+.adoptable .badge{z-index:3;background:#C9A64F;color:#2A1A12;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+::selection{background:#B08D3C;color:#fff}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#B08D3C,#E7D3A0,#B08D3C);z-index:20}
+.hero img{animation:floaty 8s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.btn.gold{position:relative;overflow:hidden}
+.btn.gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.55) 50%,transparent 62%);transform:translateX(-130%);animation:shine 5s ease-in-out infinite}
+@keyframes shine{0%,55%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
+.btn.big{padding:15px 40px;font-size:1.05rem}.btn:disabled{opacity:.9;cursor:default}.btn:disabled::after{display:none}
+.hero .moto{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,3.2vw,1.95rem);line-height:1.3;color:var(--green);max-width:24em;margin:0 auto 1em}
+.moto b,.moto-foot b,.moto-band b,.ourmoto b{font-style:normal;font-weight:600;letter-spacing:.05em;color:var(--maroon)}
+.moto-band,.moto-foot{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.35;max-width:26em;margin:0 auto 1em;color:#F8EBC6}
+.moto-band b,.moto-foot b{color:#E7D3A0}
+.ourmoto{background:linear-gradient(90deg,rgba(176,141,60,.14),transparent);border-left:3px solid var(--gold);padding:14px 18px;font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.35;color:var(--green)}
+.ourmoto span{display:block;font:600 .72rem var(--body);font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.pledge{margin-top:30px}.pcount{margin:14px auto 0;font-family:var(--serif);font-size:1.35rem;color:var(--maroon)}.pcount strong{font-size:1.9rem;color:var(--green);font-weight:600}
+.modal{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(30,12,4,.58);opacity:0;transition:opacity .6s ease}
+.modal[hidden]{display:none}.modal.show{opacity:1}
+.mcard{max-width:440px;width:100%;background:var(--ivory);border:1px solid var(--gold);outline:6px solid var(--ivory);box-shadow:0 0 0 7px var(--gold),0 30px 70px rgba(0,0,0,.4);padding:36px 28px 30px;text-align:center;transform:scale(.9) translateY(14px);transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.modal.show .mcard{transform:none}
+.mcard h2{font-size:2.2rem;margin-bottom:.3em}.mcard p{margin:0 auto 1em;font-size:1rem}
+.mcard .mm{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--green)}.mcard .mm b{font-style:normal;color:var(--maroon);letter-spacing:.05em}
+.mcard .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.rip{position:absolute;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle,transparent 66%,rgba(176,141,60,.6) 68.5%,rgba(176,141,60,.18) 72%,transparent 76%);transform:translate(-50%,-50%) scale(1);opacity:.95;animation:rip 2.6s cubic-bezier(.2,.6,.3,1) forwards}
+.rip.m{background:radial-gradient(circle,transparent 66%,rgba(107,35,8,.38) 68.5%,rgba(107,35,8,.1) 72%,transparent 76%)}.rip.f{background:radial-gradient(circle,rgba(201,166,79,.3),rgba(201,166,79,0) 70%)}
+@keyframes rip{to{transform:translate(-50%,-50%) scale(var(--s));opacity:0}}
+.hrt{position:absolute;width:16px;height:16px;color:#B53A1E;transform:translate(-50%,-50%);animation:hrt 1.9s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes hrt{to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.5) rotate(var(--r));opacity:0}}
+@media(max-width:780px){.pcount{font-size:1.2rem}.moto-band,.moto-foot{font-size:1.2rem}}
+
+.js section>.wrap>h2.fade::after{transition:width 1.8s cubic-bezier(.22,.61,.36,1) .6s}
+.js section>.wrap>h2.fade:not(.in)::after{width:0}
+.member:hover .ph img{transform:scale(1.06)}.ph img{transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+@media(prefers-reduced-motion:reduce){.hero img,.btn.gold::after{animation:none}}
+
+.pledge{margin-top:34px}
+.pledgebox{position:relative;max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);outline:1px solid var(--line);outline-offset:5px;padding:30px 26px 24px;box-shadow:0 18px 44px rgba(42,26,18,.14)}
+.pledgebox .btn.big{display:inline-flex;align-items:center;justify-content:center;gap:12px;max-width:100%;padding:17px 34px;font-size:1.08rem;letter-spacing:.04em;animation:halo 3.2s ease-in-out infinite}
+.pledgebox .btn.big:disabled{animation:none}
+.pledgebox .bh{flex:none;animation:beat 1.8s ease-in-out infinite}
+.pledgebox .btn.big:disabled .bh{display:none}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.28)}28%{transform:scale(1)}42%{transform:scale(1.2)}70%{transform:scale(1)}}
+@keyframes halo{0%,100%{box-shadow:0 0 0 0 rgba(201,166,79,.5)}60%{box-shadow:0 0 0 16px rgba(201,166,79,0)}}
+.pledgebox .pcount{margin:20px 0 0;display:flex;flex-direction:column;align-items:center;gap:2px}
+.pledgebox .pcount strong{font:600 clamp(3.6rem,10vw,5rem)/1 var(--serif);color:var(--maroon);background:linear-gradient(180deg,#9A3E14,#5A1D06);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:.02em}
+.pledgebox .pcount strong.bump{animation:bump .9s cubic-bezier(.22,.61,.36,1)}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.18)}100%{transform:scale(1)}}
+.plabel{font-variant:small-caps;letter-spacing:.22em;font-size:1.05rem;color:var(--gold);font-weight:600}
+.pmini{font-size:.9rem;color:#6a584c;margin:12px auto 0;max-width:30em}
+.pledgebox.live .plabel::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#2EB450;margin-right:9px;vertical-align:middle;animation:livedot 1.8s ease-in-out infinite}
+@keyframes livedot{0%,100%{opacity:1}50%{opacity:.25}}
+@media(max-width:780px){.pledgebox{padding:24px 16px 20px;outline-offset:4px;margin:0 6px}.pledgebox .btn.big{padding:15px 20px;font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.pledgebox .btn.big,.pledgebox .bh,.pledgebox .pcount strong.bump{animation:none}}
+</style>
+
+<style id="awn-plus">
+/* ===== AWN plus: 3D logo, gold title, flip cards, tilt, counters, paws ===== */
+.hero{position:relative}
+.hero .wrap{position:relative;z-index:1}
+.walk{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+
+/* 1 + 2: tilting 3D logo with rotating gold rings */
+.logo3d{position:relative;width:min(240px,62vw);height:min(240px,62vw);margin:6px auto 38px;perspective:900px;animation:floaty 8s ease-in-out infinite;touch-action:pan-y}
+.logo3d .tilt{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.logo3d img{position:absolute;inset:0;width:100%;height:100%;margin:0;display:block;object-fit:contain;animation:none;transform:translateZ(18px);filter:drop-shadow(0 16px 24px rgba(107,35,8,.35))}
+.logo3d .ring,.logo3d .ring2{position:absolute;border-radius:50%;pointer-events:none}
+.logo3d .ring{inset:-14px;background:conic-gradient(from 0deg,#8E6D1E,#F6E3A1,#B08D3C 22%,rgba(176,141,60,.12) 38%,#B08D3C 56%,#F6E3A1 78%,#8E6D1E);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3.5px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 3.5px),#000 calc(100% - 3px));animation:spinz 14s linear infinite}
+.logo3d .ring2{inset:-28px;border:1px dashed rgba(176,141,60,.75);animation:spinz2 48s linear infinite}
+.logo3d .glare{position:absolute;inset:0;border-radius:50%;pointer-events:none;transform:translateZ(36px);background:radial-gradient(circle at var(--gx,50%) var(--gy,40%),rgba(255,255,255,.65),rgba(255,255,255,0) 52%);opacity:var(--go,.25)}
+@keyframes spinz{from{transform:translateZ(-26px) rotate(0)}to{transform:translateZ(-26px) rotate(360deg)}}
+@keyframes spinz2{from{transform:translateZ(-48px) rotate(360deg)}to{transform:translateZ(-48px) rotate(0)}}
+.logo3d .tilt{transition:none}
+
+/* 3: embossed gold shine on the main title */
+.hero h1{color:#8E6D1E;background:linear-gradient(105deg,#6A4A10 0%,#8E6D1E 30%,#B38B30 44%,#F2DC96 50%,#B38B30 56%,#8E6D1E 70%,#6A4A10 100%);background-size:250% 100%;background-position:100% 0}
+@supports((-webkit-background-clip:text) or (background-clip:text)){
+.hero h1{-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 rgba(255,255,255,.9)) drop-shadow(0 3px 3px rgba(80,45,5,.32));animation:goldsweep 6.5s ease-in-out infinite}}
+@keyframes goldsweep{0%,18%{background-position:100% 0}68%,100%{background-position:0 0}}
+
+/* 4: 3D flip cards for the team */
+.member{padding:0;background:none;border:0;box-shadow:none;perspective:1100px}
+.fl{position:relative;display:grid;height:100%;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.3,.7,.2,1);cursor:pointer;outline-offset:4px;-webkit-tap-highlight-color:transparent}
+.fl-f,.fl-b{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-top:3px solid var(--gold);box-shadow:0 8px 22px rgba(42,26,18,.1)}
+.fl-f{background:#fff;padding:12px 12px 16px;text-align:center}
+.fl-b{transform:rotateY(180deg);background:linear-gradient(160deg,#1F3D29,#12261A);color:#F1EADB;padding:22px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.member .fl-b h3{color:#E7D3A0;margin:8px 0 0}
+.member .fl-b p{color:#F1EADB;margin:0;padding:0 4px}
+.fl-b .rule{width:46px;height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:12px auto 4px}
+.fl-b .pawi{width:26px;height:26px;color:var(--gold)}
+.member .hint{display:block;font-style:normal;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:8px;opacity:.9}
+.fl.flipped,.fl:focus-visible{transform:rotateY(180deg)}
+@media(hover:hover){.fl:hover{transform:rotateY(180deg)}}
+.fl:focus-visible{outline:2px solid var(--gold)}
+
+/* 5: tilt on pillars, role cards, book cover */
+.tilting{transition:transform .22s ease-out,box-shadow .3s;will-change:transform}
+.pillars .wrap>div,.role{position:relative;overflow:hidden}
+.pillars .wrap>div::before,.role::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(201,166,79,.2),rgba(201,166,79,0) 60%)}
+.pillars .wrap>div.tilting:hover::before,.role.tilting:hover::before{opacity:1}
+.book img.tilting:hover{box-shadow:0 28px 54px rgba(42,26,18,.38)}
+
+/* 6: stats strip */
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin:44px auto 0;max-width:640px}
+.stat{flex:1 1 150px;padding:6px 18px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:600 clamp(2.4rem,6vw,3.2rem)/1 var(--serif);color:var(--maroon)}
+.stat span{display:block;margin-top:8px;font-variant:small-caps;letter-spacing:.18em;font-size:1rem;color:var(--gold);font-weight:600}
+@media(max-width:560px){.stat{flex-basis:100%;border-left:0;border-top:1px solid var(--line);padding:16px}.stat:first-child{border-top:0}}
+
+/* 7: paw prints */
+.pw{width:20px;height:20px;margin:-10px 0 0 -10px;color:#B08D3C;opacity:0;pointer-events:none;animation:pawf 1.8s ease-out forwards}
+.pw svg{width:100%;height:100%;display:block}
+#paws{position:fixed;inset:0;pointer-events:none;z-index:15;overflow:hidden}
+#paws .pw{position:absolute}
+.walk .pw{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;animation-duration:2.8s}
+@keyframes pawf{0%{opacity:0;transform:rotate(var(--a,0deg)) scale(.55)}14%{opacity:.6;transform:rotate(var(--a,0deg)) scale(1)}100%{opacity:0;transform:rotate(var(--a,0deg)) scale(.92)}}
+
+@media(max-width:780px){.logo3d{margin-bottom:34px}.fl-f{padding:8px 8px 14px}.fl-b{padding:16px 10px}.member .hint{font-size:.6rem}}
+@media(prefers-reduced-motion:reduce){.logo3d,.logo3d .ring,.logo3d .ring2,.hero h1{animation:none}.fl{transition:none}.tilting{transition:none}#paws,.walk{display:none}}
+</style>
+
+<style id="awn-plus2">
+/* founder: classic 3D medallion */
+.medal{position:relative;width:min(320px,72vw);aspect-ratio:1;justify-self:center;margin:24px auto 46px;perspective:900px}
+.medal .mtilt{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.founder .medal img{position:absolute;inset:0;width:100%;max-width:none;height:100%;border-radius:50%;object-fit:cover;transform:translateZ(18px);filter:none;box-shadow:0 22px 40px rgba(42,26,18,.32),0 0 0 3px #fff,0 0 0 4px var(--gold)}
+.medal .mring,.medal .mring2{position:absolute;border-radius:50%;pointer-events:none}
+.medal .mring{inset:-16px;background:conic-gradient(from 0deg,#8E6D1E,#F6E3A1,#B08D3C 22%,rgba(176,141,60,.12) 38%,#B08D3C 56%,#F6E3A1 78%,#8E6D1E);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3.5px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3.5px));animation:mspin 16s linear infinite}
+.medal .mring2{inset:-30px;border:1px dashed rgba(176,141,60,.75);animation:mspin2 52s linear infinite}
+.medal .plaque{position:absolute;left:50%;bottom:-20px;transform:translate3d(-50%,0,46px);white-space:nowrap;padding:7px 26px;font-variant:small-caps;letter-spacing:.3em;font-size:1rem;font-weight:600;color:#3A1204;background:linear-gradient(180deg,#F8EBC6,#C9A64F 55%,#B08D3C);border:1px solid #8E6D1E;border-radius:2px;box-shadow:inset 0 0 0 3px rgba(255,255,255,.35),0 8px 16px rgba(42,26,18,.3)}
+@keyframes mspin{from{transform:translateZ(-26px) rotate(0)}to{transform:translateZ(-26px) rotate(360deg)}}
+@keyframes mspin2{from{transform:translateZ(-48px) rotate(360deg)}to{transform:translateZ(-48px) rotate(0)}}
+@media(prefers-reduced-motion:reduce){.medal .mring,.medal .mring2{animation:none}}
+</style>
+
+<style id="awn-plus3">
+/* ===== The ending: motto reveal, rising hearts, 3D footer logo ===== */
+footer{position:relative;overflow:hidden}
+footer .wrap{position:relative;z-index:1}
+.fhearts{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fh{position:absolute;bottom:-30px;color:#E7D3A0;opacity:0;animation:fhrise var(--d,8s) ease-in forwards}
+.fh svg{width:100%;height:100%;display:block}
+@keyframes fhrise{0%{transform:translate(0,0) scale(.6);opacity:0}12%{opacity:var(--o,.5)}100%{transform:translate(var(--dx,0),-520px) scale(1.15) rotate(var(--r,0deg));opacity:0}}
+.flogo{width:min(150px,44vw);height:min(150px,44vw);margin:8px auto 36px}
+.flogo img{filter:drop-shadow(0 14px 22px rgba(0,0,0,.45))}
+.moto-foot .w{display:inline-block;white-space:pre}
+.js-rv .moto-foot .w{opacity:0;transform:translateY(.7em);filter:blur(5px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1),filter .8s ease;transition-delay:calc(var(--i)*.16s)}
+.js-rv .moto-foot.in .w{opacity:1;transform:none;filter:none}
+.moto-foot.in .hl{animation:hlglow 2.4s ease-out forwards;animation-delay:calc(var(--i)*.16s + .5s)}
+@keyframes hlglow{0%{text-shadow:0 0 0 rgba(246,227,161,0)}35%{color:#FFF4CF;text-shadow:0 0 22px rgba(246,227,161,.95),0 0 5px rgba(246,227,161,.9)}100%{text-shadow:0 0 9px rgba(246,227,161,.35)}}
+.fpledge{margin:22px auto 42px}
+.fpledge .btn.big{display:inline-flex;align-items:center;justify-content:center;gap:12px;max-width:100%;padding:16px 32px;font-size:1.05rem;letter-spacing:.04em;animation:halo 3.2s ease-in-out infinite}
+.fpledge .btn.big:disabled{animation:none}
+.fpledge .bh{flex:none;animation:beat 1.8s ease-in-out infinite}
+.fpledge .btn.big:disabled .bh{display:none}
+.fcount{display:flex;flex-direction:column;align-items:center;gap:2px;margin:26px auto 0}
+.fcount strong{font:600 clamp(2.8rem,9vw,3.8rem)/1 var(--serif);color:#F8EBC6;letter-spacing:.02em}
+.fcount span{font-variant:small-caps;letter-spacing:.22em;font-size:1.02rem;color:#E7D3A0;font-weight:600}
+@media(max-width:780px){.fpledge .btn.big{padding:14px 20px;font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.fhearts{display:none}.fpledge .btn.big,.fpledge .bh,.moto-foot.in .hl{animation:none}}
+</style>
+
+<style id="awn-plus4">
+/* ===== Online sessions: photo collage + viewer ===== */
+.collage{display:grid;grid-template-columns:1fr 1fr .62fr;gap:14px;margin-top:36px}
+.ct{position:relative;margin:0;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 10px 28px rgba(42,26,18,.14);cursor:zoom-in;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;outline-offset:3px}
+.ct img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:cover;display:block;border:1px solid var(--gold);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.ct:hover,.ct:focus-visible{transform:translateY(-4px);box-shadow:0 20px 40px rgba(42,26,18,.26);z-index:2}
+.ct:hover img{transform:scale(1.035)}
+.ct figcaption{position:absolute;left:8px;right:8px;bottom:16px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;padding:0;background:none;color:#fff;text-align:center;font-style:normal;line-height:1.3}
+.ct b{display:inline-block;max-width:100%;padding:6px 16px;font-variant:small-caps;letter-spacing:.16em;font-size:.92rem;font-weight:600;color:#3A1204;background:linear-gradient(180deg,#F8EBC6,#C9A64F 55%,#B08D3C);border:1px solid #8E6D1E;border-radius:2px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35),0 6px 14px rgba(0,0,0,.4)}
+.ct span{display:none}
+.ct .cwatch{display:inline-block;padding:6px 14px;border:1px solid var(--gold);border-radius:2px;color:#F8EBC6;text-decoration:none;font-size:.85rem;letter-spacing:.06em;background:rgba(14,8,5,.8);transition:background .25s,color .25s}
+.ct .cwatch em{font-style:normal}
+.ct .cwatch:hover{background:var(--gold);color:#2A1208}
+.ct.a{grid-column:1;grid-row:1/3}.ct.b{grid-column:2;grid-row:1/3}
+.ct.c{grid-column:3;grid-row:1;aspect-ratio:1}.ct.d{grid-column:3;grid-row:2;aspect-ratio:1}
+.ct.e{grid-column:1/-1;grid-row:3;aspect-ratio:3.4/1}
+.ct.e img{object-position:center 40%}
+.cnote{text-align:center;font-style:italic;font-size:.9rem;color:var(--gold);margin:16px 0 0}
+@media(max-width:780px){
+ .collage{grid-template-columns:1fr 1fr;gap:10px}
+ .ct.a{grid-column:1;grid-row:auto;aspect-ratio:4/5}.ct.b{grid-column:2;grid-row:auto;aspect-ratio:4/5}
+ .ct.c{grid-column:1;grid-row:auto}.ct.d{grid-column:2;grid-row:auto}
+ .ct.e{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
+ .ct figcaption{bottom:10px;gap:6px}.ct b{font-size:.68rem;letter-spacing:.07em;padding:4px 8px}.ct .cwatch{padding:4px 9px;font-size:.7rem}.ct .cwatch em{display:none}
+}
+.lb{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(14,8,5,.93);opacity:0;transition:opacity .25s;padding:16px}
+.lb[hidden]{display:none}
+.lb.on{opacity:1}
+.lb figure{margin:0;text-align:center;max-width:94vw}
+.lb img{max-width:94vw;max-height:80vh;object-fit:contain;border:2px solid var(--gold);background:#111;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.lb .lbc{margin-top:14px;font-variant:small-caps;letter-spacing:.14em;color:#F2DC96;font-size:1rem}
+.lbx{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:rgba(18,10,6,.6);color:#F8EBC6;font-size:1.7rem;line-height:1;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.ct,.ct img,.lb{transition:none}}
+</style>
+
+<style id="awn-plus5">
+/* ===== glass + aurora ===== */
+.glass{background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border:1px solid rgba(255,255,255,.78);border-top:3px solid var(--gold);box-shadow:0 22px 50px rgba(42,26,18,.14),inset 0 1px 0 rgba(255,255,255,.85)}
+.hero,#join,#faith,#places{position:relative;overflow:hidden}
+.hero::before,#join::before,#faith::before,#places::before{content:"";position:absolute;inset:-6%;z-index:0;pointer-events:none;
+ background:radial-gradient(38% 46% at 16% 28%,rgba(201,166,79,.30),transparent 70%),radial-gradient(34% 42% at 84% 22%,rgba(23,48,31,.07),transparent 70%),radial-gradient(44% 52% at 62% 88%,rgba(107,35,8,.13),transparent 70%);
+ animation:aurora 26s ease-in-out infinite alternate}
+#faith::before,#places::before{opacity:.8}
+#join .wrap,#faith .wrap,#places .wrap{position:relative;z-index:1}
+@keyframes aurora{0%{transform:translate3d(-2%,-1%,0) scale(1)}50%{transform:translate3d(3%,2%,0) scale(1.08)}100%{transform:translate3d(-1%,4%,0) scale(1.03)}}
+.pledgebox{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border-color:rgba(255,255,255,.8);border-top-color:var(--gold);box-shadow:0 24px 54px rgba(42,26,18,.16),inset 0 1px 0 rgba(255,255,255,.85)}
+.pillars .wrap>div,.pillars .wrap>div:first-child,.role{background:rgba(255,255,255,.64);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);border-color:rgba(255,255,255,.8);border-top:3px solid var(--gold);box-shadow:0 16px 38px rgba(42,26,18,.13),inset 0 1px 0 rgba(255,255,255,.85)}
+
+/* ===== map of the six places ===== */
+.mapwrap{display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center;margin-top:34px}
+.mapcard{padding:14px;perspective:1000px;overflow:hidden}
+.mapsvg{transition:transform .3s ease-out;will-change:transform}
+.mapsvg-in{display:block;width:100%;height:auto;overflow:visible}
+.land .ext{fill:#8E6D1E;opacity:.55}
+.land .top{fill:url(#land);stroke:#B08D3C;stroke-width:2;stroke-linejoin:round}
+.land .dotsfill{fill:url(#dots);pointer-events:none}
+
+.ln{fill:none;stroke:#B08D3C;stroke-width:1.6;stroke-linecap:round;opacity:.7;stroke-dasharray:1;stroke-dashoffset:0}
+.cl{font-family:var(--serif);fill:#B08D3C;opacity:.7}
+.cl-c{font-size:17px;letter-spacing:.3em;font-weight:600}
+.cl-sea{font-size:19px;font-style:italic;letter-spacing:.12em;fill:#7C9A88}
+.cl-note{font-size:12.5px;font-style:italic;font-family:var(--body);opacity:.8}
+.pin{cursor:pointer;outline:none}
+.pin .dot{fill:var(--maroon);stroke:#E7D3A0;stroke-width:2;transition:fill .25s}
+.pin .pt{fill:#FBF8F1;font:700 13px var(--body);text-anchor:middle;pointer-events:none}
+.pin .plab{font:600 18px var(--serif);fill:var(--green);paint-order:stroke;stroke:rgba(255,253,248,.92);stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+.pin .pulse{fill:none;stroke:#B08D3C;stroke-width:2;opacity:0;transform-origin:0 0}
+.pin .hit{fill:transparent}
+.pin-sz{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.pin:hover .pin-sz,.pin.act .pin-sz,.pin:focus-visible .pin-sz{transform:scale(1.22)}
+.pin.act .dot,.pin:hover .dot{fill:#C9A64F;stroke:var(--maroon)}
+.pin.act .pt,.pin:hover .pt{fill:#2A1208}
+.arm .pin-in{opacity:0;transform:translateY(-22px) scale(.3)}
+.arm .plab{opacity:0}
+.arm .ln{stroke-dashoffset:1}
+.arm.go .pin-in{animation:pinpop .7s cubic-bezier(.3,1.5,.5,1) forwards;animation-delay:calc(var(--i)*.4s + .5s)}
+.arm.go .pin .plab{animation:plabin .6s ease forwards;animation-delay:calc(var(--i)*.4s + .9s)}
+.arm.go .ln{animation:lndraw 1.4s ease-out forwards;animation-delay:2.2s}
+.go .pin .pulse{animation:pring 2.6s ease-out infinite;animation-delay:calc(var(--i)*.4s + 1.4s)}
+@keyframes pinpop{0%{opacity:0;transform:translateY(-22px) scale(.3)}60%{opacity:1;transform:translateY(3px) scale(1.12)}100%{opacity:1;transform:none}}
+@keyframes plabin{to{opacity:1}}
+@keyframes lndraw{to{stroke-dashoffset:0}}
+@keyframes pring{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(2.4)}}
+.mapwrap .places{display:flex;flex-direction:column;gap:12px;margin:0}
+.mapwrap .place{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 18px;background:rgba(255,255,255,.64);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.8);border-left:3px solid var(--gold);border-top:1px solid rgba(255,255,255,.8);box-shadow:0 8px 22px rgba(42,26,18,.09);transition:transform .25s,background .25s,box-shadow .25s;outline:none}
+.mapwrap .place .pn{flex:none;width:34px;height:34px;border-radius:50%;background:var(--maroon);color:#FBF8F1;border:2px solid #E7D3A0;display:grid;place-items:center;font:700 .9rem var(--body)}
+.mapwrap .place h3{margin:0;font-size:1.4rem;color:var(--green);line-height:1.2}
+.mapwrap .place .pnote{display:block;margin-top:3px;font-size:.84rem;font-style:italic;color:var(--maroon);line-height:1.4}
+.mapwrap .place.act,.mapwrap .place:hover,.mapwrap .place:focus-visible{background:rgba(255,255,255,.94);transform:translateX(6px);box-shadow:0 14px 30px rgba(42,26,18,.16)}
+.mapwrap .place.act .pn,.mapwrap .place:hover .pn{background:#C9A64F;color:#2A1208;border-color:var(--maroon)}
+@media(max-width:860px){.mapwrap{grid-template-columns:1fr;gap:22px}.mapcard{padding:8px}.pin-sz{transform:scale(1.2)}.pin:hover .pin-sz,.pin.act .pin-sz{transform:scale(1.35)}.pin .plab{font-size:20px}}
+
+/* ===== quote carousel ===== */
+.qc{position:relative;max-width:820px;margin:38px auto 0;padding:46px 74px 66px;text-align:center;touch-action:pan-y}
+.qorn{width:74px;height:7px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:0 auto 26px}
+.qtrack{display:grid;overflow:hidden}
+.qs{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transform:translateX(56px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1),visibility 0s linear .8s}
+.qs.left{transform:translateX(-56px)}.qs.right{transform:translateX(56px)}
+.qs.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.qs blockquote{margin:0;font:italic clamp(1.45rem,3.2vw,2.15rem)/1.4 var(--serif);color:var(--green)}
+.qs figcaption{margin-top:20px;font-variant:small-caps;letter-spacing:.16em;font-size:1.02rem;font-weight:600;color:var(--maroon)}
+.qa{position:absolute;top:50%;margin-top:-22px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:rgba(255,255,255,.7);color:var(--maroon);font:400 1.9rem/1 var(--serif);cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.qa:hover{background:var(--maroon);color:#F8EBC6}
+.qa.prev{left:16px}.qa.next{right:16px}
+.qdots{position:absolute;left:0;right:0;bottom:26px;display:flex;justify-content:center;gap:10px}
+.qd{width:10px;height:10px;padding:0;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;transition:width .3s,background .3s}
+.qd.on{width:28px;border-radius:6px;background:var(--gold)}
+@media(max-width:700px){.qc{padding:34px 24px 60px}.qa{display:none}}
+@media(prefers-reduced-motion:reduce){.hero::before,#join::before,#faith::before,#places::before{animation:none}.arm .pin-in,.arm .plab{opacity:1;transform:none}.arm .ln{stroke-dashoffset:0}.pin .pulse{animation:none!important}.qs{transition:none}.mapsvg{transition:none}}
+</style>
+
+<style id="awn-plus6">
+/* ===== shareable Animal Defender badge ===== */
+.mcard{max-width:460px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mcard h2{font-size:2rem}
+.bdg{margin:4px auto 14px;width:min(230px,56vw);box-shadow:0 14px 30px rgba(42,26,18,.3);border:1px solid var(--gold);line-height:0;background:#6B2308}
+.bdg canvas{width:100%;height:auto;display:block}
+.bdgname{display:block;margin:0 auto 4px;max-width:320px;text-align:center}
+.bdgname span{display:block;font-size:.85rem;color:var(--maroon);margin-bottom:6px}
+.bdgname input{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);background:#fff;font:inherit;font-size:1rem;text-align:center;color:var(--ink);border-radius:0}
+.bdgname input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.mcard .bdgnote{font-size:.78rem;font-style:italic;color:#8a7a68;margin:0 auto 14px}
+.blink{display:block;margin:12px auto 0;padding:4px 2px;background:none;border:0;border-bottom:1px solid var(--gold);color:var(--maroon);font:600 .95rem var(--body);letter-spacing:.04em;cursor:pointer}
+.blink[hidden]{display:none}
+.blink:hover{color:var(--gold)}
+footer .blink{color:#F8EBC6;border-color:#E7D3A0}
+footer .blink:hover{color:#E7D3A0}
+</style>
+
+<style id="awn-perf">
+/* ===== performance: lighter effects, nothing animates off screen ===== */
+#prog{width:100%;transform:scaleX(0);transform-origin:0 0;will-change:transform}
+/* pause every infinite animation in sections that are not on screen (class set by script) */
+.off,.off *,.off::before,.off::after,.off *::before,.off *::after{animation-play-state:paused!important}
+/* background glow: composited layer, smaller, and only while visible */
+.hero::before,#join::before,#faith::before,#places::before{inset:-3%;will-change:transform}
+.logo3d,.logo3d .ring,.logo3d .ring2,.medal .mring,.medal .mring2{will-change:transform}
+/* map pulses: a few times, then stop */
+.go .pin .pulse{animation-iteration-count:3}
+/* blur is expensive: keep it on a few big cards only, and only on large screens with a mouse */
+.pillars .wrap>div,.pillars .wrap>div:first-child,.role,.mapwrap .place{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.9)}
+.mapwrap .place.act,.mapwrap .place:hover,.mapwrap .place:focus-visible{background:#fff}
+.pledgebox,.glass{background:rgba(255,255,255,.88);-webkit-backdrop-filter:none;backdrop-filter:none}
+@media(hover:hover) and (pointer:fine) and (min-width:900px){
+ .pledgebox,.glass{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+}
+@media(max-width:860px){
+ /* fewer simultaneous glows on phones */
+ #faith::before,#places::before{display:none}
+}
+
+/* scroll reveal: same fade-up, but shorter and lighter so scrolling stays smooth */
+.fade{transform:translateY(16px);transition:opacity .8s ease-out,transform .8s cubic-bezier(.22,.61,.36,1)}
+.fade.in{transform:none}
+
+/* lite mode: switched on automatically when this device scrolls slowly */
+.lite .hero::before,.lite #join::before,.lite #faith::before,.lite #places::before{display:none}
+.lite .hero h1{animation:none;filter:none}
+.lite .logo3d,.lite .logo3d .ring,.lite .logo3d .ring2,.lite .medal .mring,.lite .medal .mring2{animation:none}
+.lite .pin .pulse{display:none}
+.lite .fhearts,.lite #paws,.lite .walk{display:none}
+.lite *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.lite .fade{transform:none;transition:opacity .4s ease-out}
+.lite .btn.big,.lite .btn.gold::after{animation:none}
+</style>
+
+<style id="awn-smooth">
+/* ===== smoother scrolling: pause off-screen motion, lighter glass and glow ===== */
+.is-paused,.is-paused *,.is-paused *::before,.is-paused *::after{animation-play-state:paused!important}
+.pledgebox .btn.big,.fpledge .btn.big{animation:halopulse 2.8s ease-in-out infinite;box-shadow:0 0 0 4px rgba(201,166,79,.28),0 10px 26px rgba(201,166,79,.42);will-change:transform}
+.pledgebox .btn.big:disabled,.fpledge .btn.big:disabled{animation:none;transform:none;box-shadow:none;will-change:auto}
+@keyframes halopulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+.hero h1{animation-iteration-count:3}
+.glass,.pledgebox,.pillars .wrap>div,.pillars .wrap>div:first-child,.role,.mapwrap .place{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+@media(max-width:900px),(hover:none){
+ .glass,.pledgebox,.pillars .wrap>div,.pillars .wrap>div:first-child,.role,.mapwrap .place{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+ .glass,.pledgebox,.mapwrap .place{background:rgba(255,255,255,.9)}
+ .pillars .wrap>div,.pillars .wrap>div:first-child,.role{background:rgba(255,255,255,.93)}
+ .hero::before,#join::before,#faith::before,#places::before{animation:none}
+}
+</style>
+
+<style id="awn-smooth2">
+#prog{display:none}
+/* team flip cards: the back face is not painted until a card is flipped */
+.fl-b{visibility:hidden;transition:visibility 0s linear .85s}
+.fl.flipped .fl-b,.fl:focus-visible .fl-b{visibility:visible;transition-delay:0s}
+@media(hover:hover){.fl:hover .fl-b{visibility:visible;transition-delay:0s}}
+/* long page: skip rendering sections that are far from the screen */
+main>section{content-visibility:auto;contain-intrinsic-size:auto 900px}
+</style>
+
+<style id="awn-smooth3">
+/* freeze decorative motion while the page is being scrolled (resumes a moment after you stop) */
+html.scrolling *,html.scrolling *::before,html.scrolling *::after{animation-play-state:paused!important}
+/* cheap shadows instead of filter:drop-shadow (filters are re-rendered on every frame of motion) */
+.logo3d img,.flogo img{filter:none!important;border-radius:50%;box-shadow:0 16px 26px rgba(80,25,5,.38)}
+.hero h1{filter:none!important;-webkit-text-stroke:.6px rgba(90,60,10,.4)}
+.mapsvg-in .land{filter:none}
+.flogo img{box-shadow:0 14px 22px rgba(0,0,0,.45)}
+</style>
+<style id="awn-smooth4">
+/* lighter shadows: huge blurred shadows are expensive to draw while scrolling */
+.pillars .wrap>div,.pillars .wrap>div:first-child{box-shadow:0px 10px 20px rgba(42,26,18,.14)}
+.face:hover,.role:hover{box-shadow:0px 10px 20px rgba(42,26,18,.14)}
+.gal figure{box-shadow:0px 10px 20px rgba(42,26,18,.12)}
+.book img{box-shadow:0px 10px 20px rgba(42,26,18,.25)}
+.pay{box-shadow:0px 10px 20px rgba(42,26,18,.1)}
+.pledgebox{box-shadow:0px 10px 20px rgba(42,26,18,.14)}
+.book img.tilting:hover{box-shadow:0px 10px 20px rgba(42,26,18,.38)}
+.ct{box-shadow:0px 10px 20px rgba(42,26,18,.14)}
+.ct:hover,.ct:focus-visible{box-shadow:0px 10px 20px rgba(42,26,18,.26)}
+.lb img{box-shadow:0px 10px 20px rgba(0,0,0,.55)}
+.glass{box-shadow:0px 10px 20px rgba(42,26,18,.14), inset 0 1px 0 rgba(255,255,255,.85)}
+.pledgebox{box-shadow:0px 10px 20px rgba(42,26,18,.16), inset 0 1px 0 rgba(255,255,255,.85)}
+.pillars .wrap>div,.pillars .wrap>div:first-child,.role{box-shadow:0px 10px 20px rgba(42,26,18,.13), inset 0 1px 0 rgba(255,255,255,.85)}
+.mapwrap .place.act,.mapwrap .place:hover,.mapwrap .place:focus-visible{box-shadow:0px 10px 20px rgba(42,26,18,.16)}
+.bdg{box-shadow:0px 10px 20px rgba(42,26,18,.3)}
+.pledgebox .btn.big,.fpledge .btn.big{box-shadow:0 0 0 4px rgba(201,166,79,.28), 0px 10px 20px rgba(201,166,79,.42)}
+.logo3d img,.flogo img{box-shadow:0px 10px 20px rgba(80,25,5,.38)}
+.flogo img{box-shadow:0px 10px 20px rgba(0,0,0,.45)}
+</style>
+
+<style id="awn-plus7">
+/* ===== certificate & poster tilt ===== */
+html .tl3.tl3{position:relative;transition:transform .22s ease-out,box-shadow .3s,opacity 1.2s ease}
+.tl3::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.38),rgba(255,255,255,0) 55%)}
+.tl3-on::after{opacity:1}
+.tl3-on{box-shadow:0 26px 46px rgba(42,26,18,.3)}
+.ct.tl3 figcaption{z-index:1}
+
+/* ===== upcoming sessions ===== */
+#upcoming .lead{text-align:center;margin:0 auto 6px}
+.upc{max-width:900px;margin:30px auto 0;display:grid;gap:16px}
+.up-soon{display:flex;gap:30px;align-items:center;padding:28px 32px;text-align:left}
+.up-cal{flex:none;position:relative;width:104px;height:112px;border-radius:12px;background:#fff;border:2px solid var(--gold);box-shadow:0 10px 22px rgba(42,26,18,.18);overflow:hidden;animation:upfloat 6s ease-in-out infinite}
+.up-cal i{position:absolute;left:0;right:0;top:0;height:34px;background:linear-gradient(180deg,#8C3512,var(--maroon))}
+.up-cal i::before,.up-cal i::after{content:"";position:absolute;top:-7px;width:9px;height:18px;border-radius:5px;background:#E7D3A0;border:1px solid var(--gold)}
+.up-cal i::before{left:24px}.up-cal i::after{right:24px}
+.up-cal b{position:absolute;left:0;right:0;top:50px;text-align:center;font:600 1.5rem var(--serif);letter-spacing:.14em;color:var(--maroon)}
+@keyframes upfloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(2deg)}}
+.up-txt h3{margin:0 0 6px;font-size:1.7rem;color:var(--green)}
+.up-txt p{margin:0 0 14px;font-size:1rem}
+.up-txt .row{display:flex;gap:12px;flex-wrap:wrap}
+.up-card{padding:26px 28px}
+.up-main{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.up-date{width:92px;text-align:center;border:2px solid var(--gold);background:#fff;box-shadow:0 8px 18px rgba(42,26,18,.14)}
+.up-date small{display:block;background:var(--maroon);color:#F8EBC6;font-size:.75rem;letter-spacing:.2em;padding:4px 0;text-transform:uppercase}
+.up-date b{display:block;font:600 2.6rem/1.1 var(--serif);color:var(--maroon)}
+.up-date span{display:block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-bottom:6px}
+.up-info h3{margin:0 0 6px;font-size:1.65rem;color:var(--green);text-align:left}
+.up-info p{margin:2px 0;font-size:.98rem}
+.up-info .sp{font-style:italic;color:var(--maroon)}
+.up-cd{display:flex;gap:10px;margin:18px 0 6px}
+.up-cd div{flex:1;max-width:96px;text-align:center;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:10px 4px;box-shadow:0 6px 14px rgba(42,26,18,.08)}
+.up-cd b{display:block;font:600 1.9rem/1 var(--serif);color:var(--maroon);font-variant-numeric:tabular-nums}
+.up-cd span{display:block;margin-top:5px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.up-now[hidden],.up-cd[hidden]{display:none}
+.up-now{display:inline-block;margin-top:14px;padding:6px 16px;background:var(--maroon);color:#F8EBC6;letter-spacing:.14em;font-size:.85rem;text-transform:uppercase}
+.up-act{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.up-act .btn{font-size:.9rem;padding:10px 22px}
+.up-list{display:grid;gap:10px}
+.up-mini{display:flex;gap:14px;align-items:center;padding:14px 18px;text-align:left}
+.up-mini .d{flex:none;width:58px;text-align:center;font:600 1.5rem/1 var(--serif);color:var(--maroon)}
+.up-mini .d small{display:block;font-size:.65rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:2px}
+.up-mini .t{flex:1}.up-mini .t b{display:block;font-size:1.1rem;color:var(--green)}.up-mini .t span{font-size:.88rem;color:var(--maroon);font-style:italic}
+@media(max-width:640px){.up-soon{flex-direction:column;text-align:center;padding:24px 20px}.up-txt .row{justify-content:center}.up-main{grid-template-columns:1fr}.up-date{width:84px}.up-cd div{max-width:none}}
+
+/* ===== 3D book (transform-only, no per-frame JS while idle) ===== */
+.bk{--w:276px;--h:calc(var(--w)*1.4);--t:46px;position:relative;width:var(--w);height:var(--h);margin:14px auto 46px;perspective:1500px;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.bk.drag{cursor:grabbing}
+.bk-sway{position:absolute;inset:0;transform-style:preserve-3d;animation:bksway 9s ease-in-out infinite alternate}
+.bk.drag .bk-sway{animation-play-state:paused}
+.bk-in{position:absolute;inset:0;transform-style:preserve-3d}
+.bk-f{position:absolute;-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden}
+.bk-front{inset:0;transform:translateZ(calc(var(--t)/2));border-radius:2px 5px 5px 2px;box-shadow:inset 0 0 0 1px rgba(176,141,60,.45)}
+.bk .bk-front img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;border:0;box-shadow:none}
+.bk-front::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,0) 5%,rgba(255,255,255,.16) 6.5%,rgba(0,0,0,0) 10%,rgba(0,0,0,0) 92%,rgba(0,0,0,.08))}
+.bk-back{inset:0;transform:rotateY(180deg) translateZ(calc(var(--t)/2));background:#FDFBF4;border-radius:5px 2px 2px 5px;box-shadow:inset 0 0 0 7px #FDFBF4,inset 0 0 0 8px #C9A64F,inset 0 0 0 11px #FDFBF4,inset 0 0 0 12px rgba(176,141,60,.6)}
+.bk-bl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.bk-bl i{width:46px;height:6px;border-top:1px solid #B08D3C;border-bottom:1px solid #B08D3C;margin-bottom:16px}
+.bk-bl b{font:600 1.6rem var(--serif);letter-spacing:.3em;color:var(--green);margin-right:-.3em}
+.bk-bl em{font:italic 1rem var(--serif);color:var(--maroon);margin-top:6px}
+.bk-bl small{margin-top:22px;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#B08D3C}
+.bk-spine{width:var(--t);height:100%;left:calc((var(--w) - var(--t))/2);top:0;transform:rotateY(-90deg) translateZ(calc(var(--w)/2));background:linear-gradient(90deg,#D9CCA5,#F6F0E2 45%,#E3D6B0);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 0;box-shadow:inset 0 0 0 1px rgba(176,141,60,.5)}
+.bk-spine span{writing-mode:vertical-rl;transform:rotate(180deg);font:600 .95rem var(--serif);letter-spacing:.2em;color:var(--green);text-transform:uppercase}
+.bk-spine em{font:600 .72rem var(--serif);letter-spacing:.16em;color:var(--maroon);font-style:normal}
+.bk-pages{width:var(--t);height:calc(var(--h) - 8px);top:4px;left:calc((var(--w) - var(--t))/2);transform:rotateY(90deg) translateZ(calc(var(--w)/2 - 3px));background:repeating-linear-gradient(90deg,#FAF6EA 0 2px,#E6DCC0 2px 3px)}
+.bk-top,.bk-bottom{width:calc(var(--w) - 6px);height:var(--t);left:3px;top:calc((var(--h) - var(--t))/2);background:repeating-linear-gradient(0deg,#FAF6EA 0 2px,#E6DCC0 2px 3px)}
+.bk-top{transform:rotateX(90deg) translateZ(calc(var(--h)/2 - 3px))}
+.bk-bottom{transform:rotateX(-90deg) translateZ(calc(var(--h)/2 - 3px));filter:none;background-color:#d8ccaa}
+.bk-floor{position:absolute;left:4%;right:4%;bottom:-30px;height:28px;background:radial-gradient(ellipse at center,rgba(42,26,18,.4),rgba(42,26,18,0) 70%);pointer-events:none}
+@keyframes bksway{from{transform:rotateY(-28deg) rotateX(5deg)}to{transform:rotateY(24deg) rotateX(-2deg)}}
+@media(max-width:780px){.bk{--w:220px;--t:40px}}
+
+/* ===== install button ===== */
+.instbtn{display:block;margin:6px auto 4px;padding:9px 22px;background:transparent;border:1px solid #E7D3A0;color:#F8EBC6;font:600 .95rem var(--body);letter-spacing:.05em;cursor:pointer;transition:background .25s,color .25s}
+.instbtn:hover{background:#E7D3A0;color:#2A1208}
+.instbtn[hidden],.instnote[hidden]{display:none}
+.instnote{font-size:.85rem;color:#E7D3A0;margin:8px auto 0}
+@media(prefers-reduced-motion:reduce){.bk-sway,.up-cal{animation:none}.bk-sway{transform:rotateY(-18deg) rotateX(3deg)}.tl3{transition:none}}
+</style>
+
+
+<script>(function(){try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches){var h=document.documentElement;h.classList.add("js-fi");setTimeout(function(){if(!window.__fiReady)h.classList.remove("js-fi")},6000)}}catch(e){}})();</script>
+<style id="awn-splash-css">
+/* ===== classic opening screen ===== */
+#splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;overflow:hidden;
+ background:#FBF8F1 radial-gradient(62% 46% at 50% 42%,rgba(201,166,79,.28),rgba(201,166,79,0) 72%);color:#6B2308;
+ transition:opacity .65s ease,transform .8s cubic-bezier(.4,0,.2,1);-webkit-tap-highlight-color:transparent}
+#splash.sp-out{opacity:0;transform:scale(1.07);pointer-events:none}
+html.sp-lock,html.sp-lock body{overflow:hidden}
+.sp-frame{position:absolute;inset:max(14px,env(safe-area-inset-top,0px)) 14px max(14px,env(safe-area-inset-bottom,0px));border:1px solid rgba(176,141,60,.9);pointer-events:none;opacity:0}
+.sp-frame::before{content:"";position:absolute;inset:7px;border:1px solid rgba(176,141,60,.4)}
+.sp-frame::after{content:"";position:absolute;left:50%;top:-5px;width:9px;height:9px;margin-left:-4px;background:#B08D3C;transform:rotate(45deg)}
+.sp-center{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px;max-width:100%}
+.sp-logo{position:relative;width:min(48vw,210px);height:min(48vw,210px);opacity:0;transform:scale(.55)}
+.sp-halo{position:absolute;inset:-34%;border-radius:50%;background:radial-gradient(circle,rgba(201,166,79,.34),rgba(201,166,79,0) 62%);opacity:0}
+.sp-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:50%;box-shadow:0 18px 34px rgba(80,25,5,.3)}
+.sp-ring{position:absolute;inset:-12%;width:124%;height:124%;overflow:visible}
+.sp-ring circle{fill:none;stroke:url(#spg);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640;transform:rotate(-90deg);transform-origin:50% 50%}
+.sp-name{margin-top:clamp(28px,6vh,46px);font:600 clamp(.98rem,4.2vw,1.35rem)/1.35 "Cormorant Garamond",Georgia,serif;letter-spacing:.34em;text-transform:uppercase;color:#6B2308;opacity:0;transform:translateY(12px);margin-right:-.34em}
+.sp-tag{margin-top:12px;font:italic 400 clamp(.9rem,3.6vw,1.1rem)/1.4 "Cormorant Garamond",Georgia,serif;letter-spacing:.12em;color:#9A7A2C;opacity:0;transform:translateY(8px)}
+.sp-line{margin-top:22px;width:46px;height:5px;border-top:1px solid #B08D3C;border-bottom:1px solid #B08D3C;opacity:0}
+.sp-bar{position:absolute;left:50%;bottom:max(46px,calc(env(safe-area-inset-bottom,0px) + 34px));width:min(150px,38vw);height:2px;margin-left:calc(min(150px,38vw)/-2);background:rgba(176,141,60,.22);overflow:hidden;opacity:0}
+.sp-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#B08D3C,#E0C77A);transform:scaleX(0);transform-origin:0 50%}
+#splash.sp-go .sp-frame{animation:spfade .9s ease .05s forwards}
+#splash.sp-go .sp-logo{animation:splogo 1.05s cubic-bezier(.2,.9,.25,1) .1s forwards}
+#splash.sp-go .sp-halo{animation:sphalo 2.4s ease-in-out .3s forwards}
+#splash.sp-go .sp-ring circle{animation:spring 1.5s cubic-bezier(.45,.05,.2,1) .35s forwards}
+#splash.sp-go .sp-name{animation:spup .8s ease 1s forwards}
+#splash.sp-go .sp-line{animation:spfade .6s ease 1.35s forwards}
+#splash.sp-go .sp-tag{animation:spup .8s ease 1.45s forwards}
+#splash.sp-go .sp-bar{animation:spfade .4s ease .9s forwards}
+#splash.sp-go .sp-bar i{animation:spbar 1.5s ease-in-out .9s forwards}
+@keyframes spfade{to{opacity:1}}
+@keyframes splogo{0%{opacity:0;transform:scale(.55)}100%{opacity:1;transform:scale(1)}}
+@keyframes sphalo{0%{opacity:0;transform:scale(.8)}45%{opacity:1}100%{opacity:.75;transform:scale(1.05)}}
+@keyframes spring{to{stroke-dashoffset:0}}
+@keyframes spup{to{opacity:1;transform:none}}
+@keyframes spbar{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){#splash.sp-go *{animation-duration:.01s!important;animation-delay:0s!important}#splash{transition-duration:.2s}}
+</style>
+
+<style id="awn-plus8">
+/* ===== slow, gentle fade-in for every picture ===== */
+html.js-fi img.fi{opacity:0}
+html.js-fi img.fi.fi-go{opacity:1;animation:fiimg 1.8s cubic-bezier(.22,.61,.36,1) both}
+@keyframes fiimg{from{opacity:0}to{opacity:1}}
+html.scrolling img.fi-go{animation-play-state:running!important}
+
+/* ===== winter ribbon ===== */
+.wint{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 46px 10px 16px;position:relative;background:linear-gradient(90deg,#EEF3EC,#F6F0E2 50%,#EEF3EC);border-bottom:1px solid var(--gold);color:var(--green);font-size:.95rem;line-height:1.45;text-align:left}
+.wint[hidden]{display:none}
+.wint svg{flex:none;color:#4f7a62}
+.wint button{position:absolute;right:8px;top:50%;margin-top:-18px;width:36px;height:36px;border:0;background:transparent;color:var(--green);font-size:1.6rem;line-height:1;cursor:pointer}
+@media(max-width:560px){.wint{font-size:.88rem;padding:9px 40px 9px 12px}}
+
+/* ===== hall of supporters ===== */
+#supporters .lead{text-align:center;margin:0 auto 6px}
+.hall{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:34px}
+.hs{flex:0 1 330px;padding:30px 24px 26px;text-align:center;transition:transform .3s ease,box-shadow .3s ease}
+.hs:hover{transform:translateY(-4px)}
+.hs-av{position:relative;width:104px;height:104px;margin:0 auto 16px;border-radius:50%;padding:4px;background:conic-gradient(from 200deg,#8E6D1E,#F2DC96,#B08D3C,#F2DC96,#8E6D1E)}
+.hs-av>span,.hs-av>img{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#F3E9CE);font:600 2.1rem var(--serif);letter-spacing:.04em;color:var(--maroon);object-fit:cover;border:3px solid #FBF8F1;box-sizing:border-box}
+.hs-av::after{content:"";position:absolute;right:-2px;bottom:2px;width:28px;height:28px;border-radius:50%;border:2px solid #FBF8F1;background:var(--maroon) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F2DC96' d='M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.5-8 11-8 11z'/%3E%3C/svg%3E") center/14px no-repeat}
+.hs h3{margin:0;font-size:1.55rem;color:var(--green)}
+.hs-rule{width:54px;height:5px;margin:12px auto;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.hs p{margin:0;font-style:italic;font-size:1.02rem;color:var(--maroon);line-height:1.5}
+.hall-cta{text-align:center;margin:30px auto 0;font-size:.98rem}
+.hall-cta a{color:var(--maroon);border-bottom:1px solid var(--gold);text-decoration:none}
+.hall-cta a:hover{color:var(--gold)}
+
+/* ===== "new version" message ===== */
+.upd{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:9000;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 18px;max-width:calc(100vw - 24px);background:#FBF8F1;border:1px solid var(--gold);box-shadow:0 14px 30px rgba(42,26,18,.28);opacity:0;transform:translate(-50%,24px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.upd[hidden]{display:none}
+.upd.on{opacity:1;transform:translate(-50%,0)}
+.upd span{font-size:.95rem;color:var(--green)}
+.upd button{padding:9px 16px;border:1px solid var(--maroon);background:var(--maroon);color:#F8EBC6;font:600 .9rem var(--body);letter-spacing:.04em;cursor:pointer}
+.upd .later{background:transparent;color:var(--maroon);border-color:transparent}
+</style>
+</head>
+<body>
+<div id="splash" aria-hidden="true"><div class="sp-frame"></div><div class="sp-center"><div class="sp-logo"><div class="sp-halo"></div><svg class="sp-ring" viewBox="0 0 200 200"><defs><linearGradient id="spg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8E6D1E"/><stop offset=".5" stop-color="#E3C673"/><stop offset="1" stop-color="#B08D3C"/></linearGradient></defs><circle cx="100" cy="100" r="99"/></svg><img id="spImg" alt="" width="210" height="210" decoding="async" src="images/image-a6bd4a.webp"></div><div class="sp-name">The Animal Welfare Network</div><div class="sp-line"></div><div class="sp-tag">Compassion &middot; Protection &middot; Rescue</div></div><div class="sp-bar"><i></i></div></div>
+<script>/* opening screen: always in the installed app, and once per visit on the website */
+(function(){var SHOW_ON_WEBSITE=true,sp=document.getElementById("splash"),h=document.documentElement;
+ var app=false,seen=false;try{app=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true}catch(e){}
+ try{seen=sessionStorage.getItem("awn_splash")==="1"}catch(e){}
+ var force=/[?&]splash\b/.test(location.search),skip=/[?&]nosplash\b/.test(location.search);
+ if(skip||(!force&&!app&&(!SHOW_ON_WEBSITE||seen))){sp.parentNode.removeChild(sp);return}
+ h.classList.add("sp-lock");try{sessionStorage.setItem("awn_splash","1")}catch(e){}
+ var t0=Date.now(),started=false,loaded=false,MIN=app?2900:2500,done=false;
+ function go(){if(started)return;started=true;t0=Date.now();sp.classList.add("sp-go");setTimeout(function(){finish()},MIN)}
+ function end2(){loaded=true;MINDONE=true;finish(true)}
+ var MINDONE=false;
+ function finish(force){if(done)return;if(!force&&!loaded&&Date.now()-t0<6500){setTimeout(finish,150);return}done=true;sp.classList.add("sp-out");h.classList.remove("sp-lock");setTimeout(function(){if(sp.parentNode)sp.parentNode.removeChild(sp)},900)}
+ addEventListener("load",function(){loaded=true});
+ var im=document.getElementById("spImg");(im&&im.decode?im.decode():Promise.resolve()).then(go,go);setTimeout(go,700);
+ document.addEventListener("pointerdown",function(){if(started&&Date.now()-t0>900)end2()},true);document.addEventListener("keydown",function(){if(started)end2()},true);
+ addEventListener("pageshow",function(e){if(e.persisted&&sp.parentNode){sp.parentNode.removeChild(sp);h.classList.remove("sp-lock")}});
+})();</script>
+
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="lbx" type="button" aria-label="Close">&times;</button><figure><img alt=""><figcaption class="lbc"></figcaption></figure></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="paw" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="12" cy="16.2" rx="5.2" ry="4.2"/><ellipse cx="5.6" cy="10.4" rx="2.1" ry="2.7" transform="rotate(-18 5.6 10.4)"/><ellipse cx="9.8" cy="6.2" rx="2.1" ry="2.9"/><ellipse cx="14.2" cy="6.2" rx="2.1" ry="2.9"/><ellipse cx="18.4" cy="10.4" rx="2.1" ry="2.7" transform="rotate(18 18.4 10.4)"/></g></symbol></svg>
+
+<div id="prog"></div>
+<div class="wint" id="wint" role="note" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17"/><path d="M9.5 3.8L12 6.3l2.5-2.5M9.5 20.2L12 17.7l2.5 2.5M3 10.2l3.4.9-.9 3.4M21 13.8l-3.4-.9.9-3.4M3 13.8l3.4-.9-.9-3.4M21 10.2l-3.4.9.9 3.4"/></g></svg><span><b>Winter nights are freezing.</b> Please leave a warm sack or old blanket, a little food and fresh water outside for a stray tonight.</span><button type="button" aria-label="Close this message">&times;</button></div>
+<header class="nav"><div class="wrap">
+<a class="brand" href="#top"><img decoding="async" src="images/logo-b8a95b.webp" alt="AWN logo">AWN</a>
+<nav aria-label="Main"><ul>
+<li><a href="#sessions">Awareness</a></li><li><a href="#work">Our work</a></li><li><a href="#adopt">Adopt</a></li><li><a href="#team">Team</a></li><li><a href="#rabeet">Stories</a></li><li><a href="#book">Book</a></li><li><a href="#partners">Partners</a></li><li><a href="#support">Support</a></li><li><a href="#join">Join</a></li></ul></nav></div></header>
+
+<div class="progress" aria-hidden="true"></div>
+<main id="top">
+<div class="hero"><div class="walk" id="walk" aria-hidden="true"></div><div class="wrap">
+<div class="logo3d" id="logo3d"><span class="ring" aria-hidden="true"></span><span class="ring2" aria-hidden="true"></span><div class="tilt"><img class="fi" fetchpriority="high" loading="lazy" decoding="async" src="images/image-a6bd4a.webp" alt="The Animal Welfare Network emblem: a dog, cat and dove within a circle"><span class="glare" aria-hidden="true"></span></div></div>
+<p class="bism">Bismillah ir-Rahman ir-Raheem</p>
+<h1>The Animal Welfare Network</h1>
+<div class="orn"></div>
+<p class="motto">Compassion · Protection · Rescue</p>
+<p class="moto">“Be the <b>HUMAN</b> an <b>ANIMAL</b> needs when everyone <b>FAILS</b> them”</p>
+<p class="lead">One sleepless night and one shivering dog became a lifelong mission. Today a community of caring people feeds, rescues and speaks up for animals left out in the cold.</p>
+<div class="pledge"><div class="pledgebox"><button class="btn gold big" id="pledgeBtn" type="button"><svg class="bh" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#B53A1E" d="M12 21s-8-5.500-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></svg><span>Click here if you love animals</span></button><div class="pcount" aria-live="polite"><strong id="defCount">400+</strong><span class="plabel">Animal Defenders and counting</span></div><p class="pmini">Join them. Every click is a promise to stand with the animals.</p>
+<button class="blink" type="button" hidden>Get my Defender badge</button></div></div>
+</div></div>
+<div class="pillars"><div class="wrap">
+<div><h3>Feed &amp; Shelter</h3><p>Daily feeding rounds and shelter for strays in our streets.</p></div>
+<div><h3>Rescue &amp; Treat</h3><p>Rescue calls answered and injured animals brought to care without delay.</p></div>
+<div><h3>Educate &amp; Advocate</h3><p>Awareness sessions that have reached more than 400 people.</p></div>
+</div></div>
+
+<section id="faith" class="sand"><div class="wrap">
+<h2>Mercy in our faith</h2>
+<div class="qc glass" id="qc" role="region" aria-roledescription="carousel" aria-label="Mercy in our faith"><div class="qorn" aria-hidden="true"></div><div class="qtrack"><figure class="qs on" role="group" aria-roledescription="slide" aria-label="1 of 2"><blockquote>“There is no creature on earth, nor bird that flies with its wings, but that they are communities like you.”</blockquote><figcaption>Qur’an 6:38</figcaption></figure><figure class="qs" role="group" aria-roledescription="slide" aria-label="2 of 2"><blockquote>“Whoever is not merciful to others will not be treated mercifully.”</blockquote><figcaption>Prophet Muhammad ﷺ, Sahih al-Bukhari</figcaption></figure></div><button class="qa prev" type="button" aria-label="Previous quote">&#8249;</button><button class="qa next" type="button" aria-label="Next quote">&#8250;</button><div class="qdots"><button class="qd on" type="button" aria-label="Show quote 1" aria-current="true"></button><button class="qd" type="button" aria-label="Show quote 2"></button></div></div></div></section>
+
+<section id="sessions"><div class="wrap">
+<h2>Awareness sessions</h2>
+<p>We hold sessions in neighborhoods, colleges, community halls and schools, with one message every time: animals feel pain, animals feel fear, and animals deserve the mercy we hope for ourselves.</p>
+<div class="gal">
+<figure class="wide"><img class="fi" loading="lazy" decoding="async" src="images/awn-team-presenting-to-students-in-a-c-207a97.webp" alt="AWN team presenting to students in a classroom in Quetta"><figcaption>AWN’s team engages Class 4 &amp; 5 students in an interactive awareness session on animal welfare at Fledge Public School, Quetta.</figcaption></figure>
+<figure><img class="fi" loading="lazy" decoding="async" src="images/certificate-of-appreciation-presented--992be8.webp" alt="Certificate of Appreciation presented to a school principal"><figcaption>An AWN representative presents a Certificate of Appreciation to the Principal of Fledge Public School, in recognition of his cooperation and support.</figcaption></figure>
+<figure><img class="fi" loading="lazy" decoding="async" src="images/students-joining-hands-in-a-pledge-2a9043.webp" alt="Students joining hands in a pledge"><figcaption>Students of Class 4 &amp; 5 join hands in a shared pledge of compassion and care for animals.</figcaption></figure>
+</div>
+<h3 class="sub">Online sessions, interviews &amp; Boot Camp</h3>
+<p>Our online sessions bring veterinary guidance and animal-rights awareness to anyone with a phone. On 13 September 2026, Dr. Naveed Iqbal, DVM, was our guest speaker on Animal Welfare &amp; Animal Rights Awareness over Google Meet. On 9 September 2026, our founder joined host and journalist Meer Emran Baloch for an online podcast interview on animal welfare and advocacy. In Khuzdar, at a Boot Camp, we also distributed awareness posters among students of different institutions.</p>
+<div class="collage" id="collage"><figure class="ct a" tabindex="0" role="button" aria-label="Enlarge: AWN Awareness Poster"><img class="fi" decoding="async" src="images/poster-for-the-online-session-with-dr--49341e.webp" alt="Poster for the online session with Dr. Naveed, DVM" loading="lazy"><figcaption><b>AWN Awareness Poster</b><span>Online session with Dr. Naveed, DVM</span></figcaption></figure><figure class="ct b" tabindex="0" role="button" aria-label="Enlarge: Our Founder"><img class="fi" decoding="async" src="images/poster-for-the-awn-podcast-interview-3d7481.webp" alt="Poster for the AWN podcast interview" loading="lazy"><figcaption><b>Our Founder</b><span>Podcast interview on animal welfare &amp; advocacy</span><a class="cwatch" aria-label="Watch the podcast" href="https://www.facebook.com/share/1TUGJxsJTu/" target="_blank" rel="noopener">&#9654;<em> Watch</em></a></figcaption></figure><figure class="ct c" tabindex="0" role="button" aria-label="Enlarge: Glimpse of Our Participants"><img class="fi" decoding="async" src="images/participants-joining-the-online-sessio-4c8a6a.webp" alt="Participants joining the online session on Google Meet" loading="lazy"><figcaption><b>Glimpse of Our Participants</b><span>Online session on Google Meet</span></figcaption></figure><figure class="ct d" tabindex="0" role="button" aria-label="Enlarge: Founder &amp; Members"><img class="fi" decoding="async" src="images/participants-in-an-awn-whatsapp-group--437c40.webp" alt="Participants in an AWN WhatsApp group call" loading="lazy"><figcaption><b>Founder &amp; Members</b><span>WhatsApp group call session</span></figcaption></figure><figure class="ct e" tabindex="0" role="button" aria-label="Enlarge: Awareness Posters"><img class="fi" decoding="async" src="images/awn-awareness-posters-laid-out-for-dis-d7cb57.webp" alt="AWN awareness posters laid out for distribution" loading="lazy"><figcaption><b>Awareness Posters</b><span>Ready for distribution at the Boot Camp, Khuzdar</span></figcaption></figure></div>
+</div></section>
+
+<section id="work" class="sand"><div class="wrap">
+<h2>Our work on the ground</h2>
+<p>Every rescue, treatment and shelter begins with someone who stopped and cared. Here is a glimpse of what our community does, day by day.</p>
+<h3 class="sub">Rescue &amp; treatment</h3>
+<div class="gal three"><figure><img class="fi" decoding="async" src="images/a-kitten-being-treated-by-gloved-hands-da2a38.webp" alt="A kitten being treated by gloved hands" loading="lazy"><figcaption>A kitten receiving treatment.</figcaption></figure><figure><img class="fi" decoding="async" src="images/a-ginger-kitten-with-an-injured-eye-c04a61.webp" alt="A ginger kitten with an injured eye" loading="lazy"><figcaption>A kitten with an injured eye, brought in for care.</figcaption></figure><figure><img class="fi" decoding="async" src="images/a-ginger-cat-resting-on-a-heating-pad-d67828.webp" alt="A ginger cat resting on a heating pad" loading="lazy"><figcaption>Recovering in warmth on a heating pad.</figcaption></figure><figure><img class="fi" decoding="async" src="images/a-mother-cat-with-her-kittens-9b410d.webp" alt="A mother cat with her kittens" loading="lazy"><figcaption>A mother cat and her kittens, safe together.</figcaption></figure><figure><img class="fi" decoding="async" src="images/a-puppy-eating-from-a-plate-c48536.webp" alt="A puppy eating from a plate" loading="lazy"><figcaption>A hungry pup enjoying a meal.</figcaption></figure><figure><img class="fi" decoding="async" src="images/a-rescued-tabby-kitten-resting-in-a-ca-4ee2fe.webp" alt="A rescued tabby kitten resting in a carrier" loading="lazy"><figcaption>A rescued kitten, safe and warm in a carrier.</figcaption></figure></div>
+<h3 class="sub" id="adopt">Looking for a loving home</h3>
+<p>These little ones are waiting for families. Adopting is a promise of care, so apply and we will help find the right match.</p>
+<div class="gal adopt"><figure class="adoptable"><span class="badge">For adoption</span><img class="fi" decoding="async" src="images/adoption-poster-of-a-male-mackerel-tab-ec415b.webp" alt="Adoption poster of a male mackerel tabby kitten" loading="lazy"><figcaption>Male, 4 months old, Domestic Short Hair, Mackerel Tabby. Litter trained, not yet vaccinated.<br><a class="btn" href="https://forms.gle/xJuuXb8BuNVe2ML27" target="_blank" rel="noopener">Adopt me</a></figcaption></figure><figure class="adoptable"><span class="badge">For adoption</span><img class="fi" decoding="async" src="images/a-rescued-tabby-kitten-waiting-for-a-h-1a24b3.webp" alt="A rescued tabby kitten waiting for a home" loading="lazy"><figcaption>A rescued tabby kitten, safe and warm, waiting for a loving home.<br><a class="btn" href="https://forms.gle/xJuuXb8BuNVe2ML27" target="_blank" rel="noopener">Adopt me</a></figcaption></figure></div>
+<h3 class="sub">Shelters, feeders &amp; water points</h3>
+<div class="gal three"><figure><img class="fi" decoding="async" src="images/a-yellow-hanging-feeder-on-a-mud-wall-406e34.webp" alt="A yellow hanging feeder on a mud wall" loading="lazy"><figcaption>A hanging feeder placed for birds.</figcaption></figure><figure><img class="fi" decoding="async" src="images/a-clay-pot-placed-on-a-wall-as-a-shelt-199ffd.webp" alt="A clay pot placed on a wall as a shelter" loading="lazy"><figcaption>A clay pot set up as a shelter.</figcaption></figure><figure><img class="fi" decoding="async" src="images/clay-bowls-of-water-beside-a-young-tre-b05056.webp" alt="Clay bowls of water beside a young tree" loading="lazy"><figcaption>Clay bowls filled with water for thirsty animals.</figcaption></figure></div>
+</div></section>
+
+<section id="report" class="band"><div class="wrap"><h2>Report an animal in need</h2>
+<p>Found an injured, sick or hungry animal? Message us on Instagram with a photo and the location, and follow our page for rescue updates.</p>
+<p class="moto-band">“Be the <b>HUMAN</b> an <b>ANIMAL</b> needs when everyone <b>FAILS</b> them”</p>
+<a class="btn gold" href="https://www.instagram.com/theanimalwelfarenetwork_" target="_blank" rel="noopener">Message us on Instagram</a></div></section>
+
+<section id="places" class="sand"><div class="wrap"><h2>Where we work</h2><p>AWN’s team and volunteers are active across Balochistan.</p><div class="mapwrap" id="mapwrap"><div class="mapcard glass" id="mapcard"><div class="mapsvg" id="mapsvg"><svg class="mapsvg-in" viewBox="0 0 596 556" role="group" aria-label="Illustrative map of Balochistan showing the six places where AWN works" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="land" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDF8"/><stop offset="1" stop-color="#F0E1B4"/></linearGradient><pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#B08D3C" opacity=".38"/></pattern></defs><text class="cl cl-c" x="47" y="347" text-anchor="middle">IRAN</text><text class="cl cl-c" x="185" y="62" text-anchor="middle">AFGHANISTAN</text><text class="cl cl-c" x="521" y="386" text-anchor="middle">SINDH</text><text class="cl cl-sea" x="196" y="526" text-anchor="middle">~ Arabian Sea ~</text><g class="land"><path class="ext" d="M83.3 475.2 L124.6 473.9 L156.8 468.8 L190.7 464.3 L224.6 462.4 L252.9 467.5 L286.8 457.3 L326.3 452.8 L360.2 457.3 L365.9 486.7 L369.9 492.5 L373.8 488.0 L377.2 478.4 L385.7 465.6 L394.2 443.2 L402.6 411.2 L408.3 379.2 L422.4 347.2 L430.9 315.2 L436.5 283.2 L450.7 257.6 L484.6 244.8 L512.8 241.6 L529.8 219.2 L543.9 187.2 L560.9 155.2 L572.2 123.2 L569.3 104.0 L563.7 72.0 L546.7 49.6 L518.5 36.8 L484.6 52.8 L445.0 78.4 L405.5 81.6 L371.5 84.8 L354.6 100.8 L346.1 129.6 L332.0 161.6 L298.1 180.8 L247.2 193.6 L190.7 196.8 L134.2 196.8 L94.6 190.4 L42.1 170.6 L55.1 196.8 L77.7 212.8 L86.2 232.0 L105.9 264.0 L145.5 276.8 L148.3 315.2 L128.5 353.6 L105.9 385.6 L94.6 417.6 L83.3 449.6 Z" transform="translate(0 9)"/><path class="top" d="M83.3 475.2 L124.6 473.9 L156.8 468.8 L190.7 464.3 L224.6 462.4 L252.9 467.5 L286.8 457.3 L326.3 452.8 L360.2 457.3 L365.9 486.7 L369.9 492.5 L373.8 488.0 L377.2 478.4 L385.7 465.6 L394.2 443.2 L402.6 411.2 L408.3 379.2 L422.4 347.2 L430.9 315.2 L436.5 283.2 L450.7 257.6 L484.6 244.8 L512.8 241.6 L529.8 219.2 L543.9 187.2 L560.9 155.2 L572.2 123.2 L569.3 104.0 L563.7 72.0 L546.7 49.6 L518.5 36.8 L484.6 52.8 L445.0 78.4 L405.5 81.6 L371.5 84.8 L354.6 100.8 L346.1 129.6 L332.0 161.6 L298.1 180.8 L247.2 193.6 L190.7 196.8 L134.2 196.8 L94.6 190.4 L42.1 170.6 L55.1 196.8 L77.7 212.8 L86.2 232.0 L105.9 264.0 L145.5 276.8 L148.3 315.2 L128.5 353.6 L105.9 385.6 L94.6 417.6 L83.3 449.6 Z"/><path class="dotsfill" d="M83.3 475.2 L124.6 473.9 L156.8 468.8 L190.7 464.3 L224.6 462.4 L252.9 467.5 L286.8 457.3 L326.3 452.8 L360.2 457.3 L365.9 486.7 L369.9 492.5 L373.8 488.0 L377.2 478.4 L385.7 465.6 L394.2 443.2 L402.6 411.2 L408.3 379.2 L422.4 347.2 L430.9 315.2 L436.5 283.2 L450.7 257.6 L484.6 244.8 L512.8 241.6 L529.8 219.2 L543.9 187.2 L560.9 155.2 L572.2 123.2 L569.3 104.0 L563.7 72.0 L546.7 49.6 L518.5 36.8 L484.6 52.8 L445.0 78.4 L405.5 81.6 L371.5 84.8 L354.6 100.8 L346.1 129.6 L332.0 161.6 L298.1 180.8 L247.2 193.6 L190.7 196.8 L134.2 196.8 L94.6 190.4 L42.1 170.6 L55.1 196.8 L77.7 212.8 L86.2 232.0 L105.9 264.0 L145.5 276.8 L148.3 315.2 L128.5 353.6 L105.9 385.6 L94.6 417.6 L83.3 449.6 Z"/></g><g class="lines"><path class="ln" pathLength="1" d="M387.9 150.1 Q355.9 223.2 366.5 302.4"/><path class="ln" pathLength="1" d="M387.9 150.1 Q277.2 229.9 224.1 355.5"/><path class="ln" pathLength="1" d="M387.9 150.1 Q391.5 137.3 387.9 124.5"/><path class="ln" pathLength="1" d="M387.9 150.1 Q335.6 310.7 374.4 475.2"/><path class="ln" pathLength="1" d="M387.9 150.1 Q329.2 188.9 299.2 252.5"/></g><g class="pin" data-k="quetta" style="--i:0" transform="translate(387.9 150.1)" tabindex="0" role="button" aria-label="Quetta"><g class="pin-in"><g class="pin-sz"><circle class="pulse" r="12"/><circle class="hit" r="19"/><circle class="dot" r="12"/><text class="pt" y="4.6">1</text><text class="plab" x="21" y="5" text-anchor="start">Quetta</text></g></g></g><g class="pin" data-k="khuzdar" style="--i:1" transform="translate(366.5 302.4)" tabindex="0" role="button" aria-label="Khuzdar"><g class="pin-in"><g class="pin-sz"><circle class="pulse" r="12"/><circle class="hit" r="19"/><circle class="dot" r="12"/><text class="pt" y="4.6">2</text><text class="plab" x="21" y="5" text-anchor="start">Khuzdar</text></g></g></g><g class="pin" data-k="panjgur" style="--i:2" transform="translate(224.1 355.5)" tabindex="0" role="button" aria-label="Panjgur"><g class="pin-in"><g class="pin-sz"><circle class="pulse" r="12"/><circle class="hit" r="19"/><circle class="dot" r="12"/><text class="pt" y="4.6">3</text><text class="plab" x="21" y="5" text-anchor="start">Panjgur</text></g></g></g><g class="pin" data-k="pishin" style="--i:3" transform="translate(387.9 124.5)" tabindex="0" role="button" aria-label="Pishin"><g class="pin-in"><g class="pin-sz"><circle class="pulse" r="12"/><circle class="hit" r="19"/><circle class="dot" r="12"/><text class="pt" y="4.6">4</text><text class="plab" x="-21" y="5" text-anchor="end">Pishin</text></g></g></g><g class="pin" data-k="hubchowki" style="--i:4" transform="translate(374.4 475.2)" tabindex="0" role="button" aria-label="Hub Chowki"><g class="pin-in"><g class="pin-sz"><circle class="pulse" r="12"/><circle class="hit" r="19"/><circle class="dot" r="12"/><text class="pt" y="4.6">5</text><text class="plab" x="21" y="5" text-anchor="start">Hub Chowki</text></g></g></g><g class="pin" data-k="kharan" style="--i:5" transform="translate(299.2 252.5)" tabindex="0" role="button" aria-label="Kharan"><g class="pin-in"><g class="pin-sz"><circle class="pulse" r="12"/><circle class="hit" r="19"/><circle class="dot" r="12"/><text class="pt" y="4.6">6</text><text class="plab" x="21" y="5" text-anchor="start">Kharan</text></g></g></g><text class="cl cl-note" x="582" y="546" text-anchor="end">Illustrative map, not to scale</text></svg></div></div><div class="places"><div class="place" data-k="quetta" tabindex="0"><span class="pn">1</span><div><h3>Quetta</h3><span class="pnote">Awareness sessions in schools, such as Fledge Public School.</span></div></div><div class="place" data-k="khuzdar" tabindex="0"><span class="pn">2</span><div><h3>Khuzdar</h3><span class="pnote">Boot Camp: awareness posters handed to students.</span></div></div><div class="place" data-k="panjgur" tabindex="0"><span class="pn">3</span><div><h3>Panjgur</h3><span class="pnote">Home of our District Ambassador.</span></div></div><div class="place" data-k="pishin" tabindex="0"><span class="pn">4</span><div><h3>Pishin</h3></div></div><div class="place" data-k="hubchowki" tabindex="0"><span class="pn">5</span><div><h3>Hub Chowki</h3></div></div><div class="place" data-k="kharan" tabindex="0"><span class="pn">6</span><div><h3>Kharan</h3></div></div></div></div></div></section>
+
+<section id="team"><div class="wrap">
+<h2>Founder &amp; team</h2>
+<div class="founder" id="founder">
+<div class="medal" id="medal"><span class="mring" aria-hidden="true"></span><span class="mring2" aria-hidden="true"></span><div class="mtilt"><img class="fi" loading="lazy" decoding="async" src="images/jahangeer-ejaz-zehri-founder-of-awn-2ca8c0.webp" alt="Jahangeer Ejaz Zehri, founder of AWN"><span class="plaque">Founder</span></div></div>
+<div>
+<h3 class="sub" style="text-align:left;margin-top:0">A word from the founder</h3>
+<p>I am not a scholar. I am not a veterinarian. I am simply a man who, one ordinary night, asked himself an extraordinary question, and an animal answered it for me.</p>
+<p>This is not about me. It is about a dog shivering outside a hotel, a WhatsApp group that grew into a family, and more than four hundred people who decided that mercy should not be optional.</p>
+<p class="ourmoto"><span>Our motto</span>“Be the <b>HUMAN</b> an <b>ANIMAL</b> needs when everyone <b>FAILS</b> them”</p>
+<p class="sig">Jahangeer Ejaz Zehri</p>
+<p style="font-size:.92rem;color:var(--gold)">Founder, The Animal Welfare Network</p>
+<p><a class="btn alt" href="https://www.linkedin.com/in/jahangeer-ejaz-zehri-2b3417424" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
+</div></div>
+<h3 class="sub">The AWN team</h3>
+<div class="team"><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Inam Khan Kakar - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/inam-khan-kakar-ae11aa.webp" alt="Inam Khan Kakar" loading="lazy"></div><h3>Inam Khan Kakar</h3><span>Co-founder</span><i class="hint">&#8635; Meet Inam</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Inam Khan Kakar</h3><div class="rule"></div><p>Co-founder of the mission who never says no when help is needed. He regularly brings fresh meat to feed hungry puppies on the ground.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Aqsa Tariq - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/aqsa-tariq-6951f6.webp" alt="Aqsa Tariq" loading="lazy"></div><h3>Aqsa Tariq</h3><span>Creative Campaigns Coordinator</span><i class="hint">&#8635; Meet Aqsa</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Aqsa Tariq</h3><div class="rule"></div><p>Leads the creative side of our campaigns, shaping how our message looks and feels so it reaches people and stays with them.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Yusra Khalid - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/yusra-khalid-c0759b.webp" alt="Yusra Khalid" loading="lazy"></div><h3>Yusra Khalid</h3><span>Strategic Communication Lead</span><i class="hint">&#8635; Meet Yusra</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Yusra Khalid</h3><div class="rule"></div><p>An eager animal lover dedicated to helping in any way she can. She leads strategic communication so our message stays clear and consistent.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Ahlam Hafeez - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/ahlam-hafeez-8c56d4.webp" alt="Ahlam Hafeez" loading="lazy"></div><h3>Ahlam Hafeez</h3><span>Moderator</span><i class="hint">&#8635; Meet Ahlam</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Ahlam Hafeez</h3><div class="rule"></div><p>Guides our awareness sessions with care, keeping every conversation welcoming, respectful and on track.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Muhammad Emran - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/muhammad-emran-0da857.webp" alt="Muhammad Emran" loading="lazy"></div><h3>Muhammad Emran</h3><span>Chief Communication Officer</span><i class="hint">&#8635; Meet Muhammad</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Muhammad Emran</h3><div class="rule"></div><p>Oversees AWN’s communication, helping our work and our message reach the right people with clarity.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Jamshaid Khan - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/jamshaid-khan-95686e.webp" alt="Jamshaid Khan" loading="lazy"></div><h3>Jamshaid Khan</h3><span>Head of Field Operations</span><i class="hint">&#8635; Meet Jamshaid</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Jamshaid Khan</h3><div class="rule"></div><p>Heads our field operations, coordinating the activities that take AWN’s mission from plans to the street.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Zainab Amjid - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/zainab-amjid-c878b1.webp" alt="Zainab Amjid" loading="lazy"></div><h3>Zainab Amjid</h3><span>Strategic Social Media Lead</span><i class="hint">&#8635; Meet Zainab</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Zainab Amjid</h3><div class="rule"></div><p>Tirelessly manages our online presence so our rescues and stories reach the wider world.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Mahal Mustafa - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/mahal-mustafa-5688b7.webp" alt="Mahal Mustafa" loading="lazy"></div><h3>Mahal Mustafa</h3><span>District Ambassador, Panjgur</span><i class="hint">&#8635; Meet Mahal</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Mahal Mustafa</h3><div class="rule"></div><p>A dedicated, constant presence in our group, and AWN’s ambassador for the district of Panjgur.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Mustansar Ahmed - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/mustansar-ahmed-e41860.webp" alt="Mustansar Ahmed" loading="lazy"></div><h3>Mustansar Ahmed</h3><span>Proposal Writer</span><i class="hint">&#8635; Meet Mustansar</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Mustansar Ahmed</h3><div class="rule"></div><p>Writes the proposals that present AWN’s work and plans clearly to partners and supporters.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Mukhlis Khan Bazai - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/mukhlis-khan-bazai-520658.webp" alt="Mukhlis Khan Bazai" loading="lazy"></div><h3>Mukhlis Khan Bazai</h3><span>Photographer</span><i class="hint">&#8635; Meet Mukhlis</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Mukhlis Khan Bazai</h3><div class="rule"></div><p>Captures our sessions and community moments through the lens, preserving the story of AWN’s work.</p></div></div></figure><figure class="member"><div class="fl" tabindex="0" role="button" aria-label="Dr. Naveed Iqbal - flip card to read more"><div class="fl-f"><div class="ph"><img class="fi" decoding="async" src="images/dr-naveed-iqbal-8ea1c8.webp" alt="Dr. Naveed Iqbal" loading="lazy"></div><h3>Dr. Naveed Iqbal</h3><span>Veterinary Practitioner (DVM)</span><i class="hint">&#8635; Meet Dr. Naveed</i></div><div class="fl-b"><svg class="pawi" viewBox="0 0 24 24" aria-hidden="true"><use href="#paw"/></svg><h3>Dr. Naveed Iqbal</h3><div class="rule"></div><p>A practising veterinarian (DVM) and member of our team, and guest speaker at our online Animal Welfare &amp; Animal Rights Awareness session.</p></div></div></figure></div>
+</div></section>
+
+<section id="community"><div class="wrap"><div class="statrow"><div class="num" data-count="400" data-suffix="+">400+</div><p>people have heard our message directly in awareness sessions held in neighborhoods, colleges, community halls and schools. Some now feed a street dog on their way to work. Some report cruelty instead of walking past.</p><p>We are still a young community. Four hundred is not a ceiling. It is a beginning.</p><div class="stats"><div class="stat"><b data-count-sel=".places .place">6</b><span>Places we work</span></div><div class="stat"><b data-count-sel=".team .member">11</b><span>Team members</span></div><div class="stat"><b data-count-sel=".roles .role">6</b><span>Ways to join</span></div></div></div></div></section>
+
+<section id="rabeet" class="memorial"><div class="wrap">
+<h2>The dog who disturbed no one</h2>
+<p style="text-align:center;font-style:italic;color:#E7D3A0">In loving memory · A story from Hyderabad, Sindh</p>
+<p>For four years, Rabeet Naeem Khanzada fed and watched over a gentle dog near her home, the calmest she had ever known. When she returned from a trip to Karachi in September, her dog had been poisoned.</p>
+<div class="quote">She never disturbed anyone. She never harmed anyone. She lived quietly, and she was loved.<small>“Indeed, we belong to Allah, and indeed, to Him we shall return.” Qur’an 2:156</small></div>
+<p>Rabeet has never been a silent witness. She raises her voice for animal rights, and for the dog who can no longer speak. A true animal activist. A true human being.</p>
+</div></section>
+
+<section id="agenda"><div class="wrap">
+<h2>Our agenda: helping animals</h2>
+<p>Everything we do returns to one simple agenda. This is what we ask of ourselves, and what we invite you to join.</p>
+<ol class="agenda">
+<li>Feed and shelter strays in your own street, every single day.</li>
+<li>Rescue and treat injured or sick animals without delay.</li>
+<li>Speak up and report cruelty whenever you witness it.</li>
+<li>Host or attend awareness sessions in your community.</li>
+<li>Teach children early that mercy to animals is mercy to all.</li>
+<li>Treat this as an act of faith, not a favor to be praised for.</li>
+</ol>
+</div></section>
+
+<section class="sand"><div class="wrap"><h2>Looking ahead</h2>
+<p>We hope for more feeding points, more rescue capacity, more awareness sessions, and more young people who choose compassion as a habit, not an event.</p>
+<p>We dream of a day when no dog shivers unnoticed outside a building full of people, and every one of those people has somewhere to turn.</p></div></section>
+
+</main>
+
+<section id="book"><div class="wrap"><h2>The book</h2>
+<div class="book"><div class="bk" id="bk" role="img" aria-label="3D view of the book Rahma: A Call to Mercy. Drag to turn it, tap to flip it."><div class="bk-sway"><div class="bk-in" id="bkIn"><div class="bk-f bk-front"><img class="fi" decoding="async" src="images/cover-of-the-book-rahma-a-call-to-merc-ac6138.webp" alt="Cover of the book Rahma: A Call to Mercy" loading="lazy"></div><div class="bk-f bk-back"><span class="bk-bl"><i></i><b>RAHMA</b><em>A Call to Mercy</em><small>The Animal Welfare Network</small></span></div><div class="bk-f bk-spine"><span>Rahma &middot; A Call to Mercy</span><em>AWN</em></div><div class="bk-f bk-pages"></div><div class="bk-f bk-top"></div><div class="bk-f bk-bottom"></div></div></div><div class="bk-floor"></div></div>
+<div><h3 class="sub" style="text-align:left;margin-top:0">Rahma: A Call to Mercy</h3>
+<p>A founding story, written by our founder: how one sleepless night in a hotel room, and one shivering dog in the cold, became a lifelong mission for animal welfare.</p>
+<p>Read how a single act of kindness grew into a community of more than four hundred people.</p>
+<a class="btn" href="https://drive.google.com/file/d/1qTsko_oOrU8AJQSRismo66r-DfVJBg0N/view?usp=drivesdk" target="_blank" rel="noopener">Download the book</a></div></div></div></section>
+
+<section id="partners" class="sand"><div class="wrap"><h2>Our partners</h2>
+<p>Schools and institutions that open their doors to our message of mercy.</p>
+<div class="partners gal"><div class="pcard"><h3>Fledge Public High School</h3><p>Quetta</p><p>Welcomed our Animal Welfare Awareness Session for its students. AWN presented its Principal with a Certificate of Appreciation for his leadership and support.</p></div>
+<figure><img class="fi" decoding="async" src="images/awn-certificate-of-appreciation-presen-154a85.webp" alt="AWN Certificate of Appreciation presented to Mr. Jamil Ahmed Mushwani" loading="lazy"><figcaption>Certificate of Appreciation presented to Mr. Jamil Ahmed Mushwani, Principal, Fledge Public High School.</figcaption></figure></div>
+</div></section>
+
+<section id="supporters"><div class="wrap"><h2>Hall of supporters</h2><p class="lead">Kind people who stand with the animals of Balochistan. Thank you, from all of us and from every animal you helped.</p><div class="hall" id="hall"></div><p class="hall-cta">Want to stand with us too? <a href="#support">Support our work</a> or <a href="#join">join the mission</a>.</p></div></section>
+
+<section id="upcoming"><div class="wrap"><h2>Upcoming sessions</h2><p class="lead">Join our next awareness session, online or in your community. Everyone is welcome.</p><div class="upc" id="upc"><div class="up-soon glass"><div class="up-cal" aria-hidden="true"><i></i><b>SOON</b></div><div class="up-txt"><h3>Our next session is coming soon</h3><p>We are planning the next awareness session. Follow us to hear the date first, or write to us and we will let you know.</p><div class="row"><a class="btn gold" href="https://www.instagram.com/theanimalwelfarenetwork_" target="_blank" rel="noopener">Follow for the date</a><a class="btn alt" href="mailto:jahangeerzehri1@gmail.com?subject=Please%20tell%20me%20about%20the%20next%20AWN%20session">Notify me by email</a></div></div></div></div></div></section>
+
+<section id="join"><div class="wrap"><h2>Join the mission</h2><p>Mercy to animals is not optional. Choose the way you want to stand with us, and complete the short form for that role.</p><div class="roles"><div class="role"><h3>Volunteer</h3><p>Join feeding rounds, awareness sessions and community drives, whenever you can give an hour.</p><a class="btn" data-form="volunteer" href="#contact">Apply as Volunteer</a></div><div class="role"><h3>Member</h3><p>Become part of the AWN family and stay connected to our rescues, sessions and stories.</p><a class="btn" data-form="member" href="#contact">Apply as Member</a></div><div class="role"><h3>Ambassador</h3><p>Represent AWN in your school, college or city and carry our message to more people.</p><a class="btn" data-form="ambassador" href="#contact">Apply as Ambassador</a></div><div class="role"><h3>Rescue Responder</h3><p>Help answer rescue calls and bring injured or sick animals to care without delay.</p><a class="btn" data-form="rescue" href="#contact">Apply as Rescue Responder</a></div><div class="role"><h3>Foster &amp; Adopter</h3><p>Open your home to an animal in need. We will help arrange a pet for you.</p><a class="btn" data-form="foster" href="#contact">Apply as Foster or Adopter</a></div><div class="role"><h3>Partner School or Organization</h3><p>Invite us to host an awareness session at your school, college or workplace.</p><a class="btn" data-form="partner" href="#contact">Register as Partner</a></div></div></div></section>
+
+<section id="support" class="sand"><div class="wrap"><h2>Support our mission</h2>
+<p>Your support helps us feed, treat and shelter animals in need, and keep our awareness sessions going.</p>
+<div class="pay"><div class="eplogo" role="img" aria-label="Easypaisa">easypaisa</div><div class="paylabel">Easypaisa number</div><div class="paynum">0337 7769626</div>
+<button class="btn" type="button" data-copy="03377769626">Copy number</button>
+<p class="paynote">After sending, please message us on Instagram so we can thank you.</p></div>
+</div></section>
+
+<footer id="contact"><div class="fhearts" id="fhearts" aria-hidden="true"></div><div class="wrap">
+<div class="logo3d flogo" id="flogo"><span class="ring" aria-hidden="true"></span><span class="ring2" aria-hidden="true"></span><div class="tilt"><img class="fi" loading="lazy" decoding="async" src="images/logo-174633.webp" alt="AWN logo"><span class="glare" aria-hidden="true"></span></div></div>
+<p class="moto-foot" id="motoFoot">“Be the <b>HUMAN</b> an <b>ANIMAL</b> needs when everyone <b>FAILS</b> them”</p>
+<div class="fpledge"><button class="btn gold big" id="pledgeBtn2" type="button"><svg class="bh" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#B53A1E" d="M12 21s-8-5.500-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></svg><span>Click here if you love animals</span></button><p class="fcount" aria-live="polite"><strong id="defCount2">400+</strong><span>Animal Defenders and counting</span></p><button class="blink" type="button" hidden>Get my Defender badge</button></div>
+<h2>Connect with us</h2>
+<div class="social"><a href="https://www.instagram.com/theanimalwelfarenetwork_" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61593994948167" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8.5V7c0-.8.3-1 1-1h2V3h-3c-3 0-4 1.8-4 4v1.5H7V12h3v9h4v-9h3l.5-3.5z"/></svg></a><a href="https://www.linkedin.com/in/jahangeer-ejaz-zehri-2b3417424" target="_blank" rel="noopener" aria-label="LinkedIn (founder)" title="LinkedIn (founder)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="4" height="12" fill="currentColor"/><circle cx="5" cy="5" r="2.2" fill="currentColor"/><path fill="currentColor" d="M10 9h3.8v1.8c.6-1.1 1.9-2 3.7-2 3.4 0 4.5 2.2 4.5 5.2V21h-4v-5.8c0-1.4-.1-2.8-1.8-2.8s-2.2 1.3-2.2 2.8V21h-4z"/></svg></a></div>
+<p><a href="https://bit.ly/TheAnimalWelfareNetworkBalochistan" target="_blank" rel="noopener">bit.ly/TheAnimalWelfareNetworkBalochistan</a></p>
+<p>Write to us at <a href="mailto:jahangeerzehri1@gmail.com">jahangeerzehri1@gmail.com</a></p>
+<button class="instbtn" id="installBtn" type="button" hidden>Install the AWN app</button><p class="instnote" id="instNote" hidden>On iPhone: tap the Share button, then &ldquo;Add to Home Screen&rdquo;.</p>
+<p class="fine">© The Animal Welfare Network (AWN). Compassion · Protection · Rescue</p>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<script>
+/* Paste each Google Form / form link between the quotes below */
+var FORMS={volunteer:"https://forms.gle/xJuuXb8BuNVe2ML27",member:"https://forms.gle/xJuuXb8BuNVe2ML27",ambassador:"https://forms.gle/xJuuXb8BuNVe2ML27",rescue:"https://forms.gle/xJuuXb8BuNVe2ML27",foster:"https://forms.gle/xJuuXb8BuNVe2ML27",partner:"https://forms.gle/xJuuXb8BuNVe2ML27"};
+document.querySelectorAll("[data-form]").forEach(function(a){var u=FORMS[a.dataset.form];if(u){a.href=u;a.target="_blank";a.rel="noopener"}else{a.textContent="Form opening soon"}});
+</script>
+<script>
+(function(){var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(rm||!("IntersectionObserver" in window))return;
+document.documentElement.classList.add("js");var els=document.querySelectorAll("main section>.wrap>*,.gal figure");
+els.forEach(function(e){e.classList.add("fade")});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:0,rootMargin:"0px 0px -6% 0px"});
+els.forEach(function(e){io.observe(e)})})();
+</script>
+<script>
+(function(){var bar=document.querySelector(".progress"),tt=document.querySelector(".totop"),tick=false;
+function upd(){var d=document.documentElement,max=d.scrollHeight-innerHeight,y=window.pageYOffset;bar.style.transform="scaleX("+(max>0?Math.min(y/max,1):0)+")";tt.classList.toggle("show",y>700);tick=false}
+addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+tt.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;var t=b.getAttribute("data-copy");
+function done(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy number"},2200)}
+function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");done()}catch(x){}a.remove()}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fb)}else{fb()}});
+})();
+</script>
+<div id="fx" aria-hidden="true"></div>
+<div class="modal" id="thanks" role="dialog" aria-modal="true" aria-labelledby="thTitle" hidden><div class="mcard">
+<h2 id="thTitle">Thank you, Defender!</h2><p id="thText">You are now one of our Animal Defenders.</p>
+<div class="bdg"><canvas id="bdgCanvas" width="1080" height="1350" role="img" aria-label="Your Animal Defender badge"></canvas></div>
+<label class="bdgname"><span>Add your name to the badge (optional)</span><input id="bdgName" type="text" maxlength="28" placeholder="Your name" autocomplete="name"></label>
+<p class="bdgnote">Your name stays on your device and is not sent anywhere.</p>
+<div class="row"><button class="btn gold" id="bdgShare" type="button">Share my badge</button><button class="btn alt" id="bdgSave" type="button">Save image</button></div>
+<div class="row"><a class="btn alt" id="thShare" href="#" target="_blank" rel="noopener">Share the link</a><button class="btn alt" id="thClose" type="button">Close</button></div></div></div>
+<script>
+(function(){
+var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var prog=document.getElementById("prog");
+var scq=0;function sc(){if(scq)return;scq=requestAnimationFrame(function(){scq=0;sc0()})}
+function sc0(){var d=document.documentElement,m=d.scrollHeight-d.clientHeight;prog.style.transform="scaleX("+(m>0?d.scrollTop/m:0).toFixed(4)+")"}
+
+/* Animal Defenders pledge: one click per visitor, counter starts at 400 */
+/* For a shared live counter, paste your Google Apps Script web-app URL below (see awn-counter-apps-script.gs) */
+var COUNTER_URL="https://script.google.com/macros/s/AKfycbyeoRtqPvllp89guPod2E7CpBxLvJkZU7tUHVRfvPH2KVSxmlQZNRXbJfaaNlGr6qUg/exec";if(COUNTER_URL)document.querySelector(".pledgebox").classList.add("live");
+var base=800,KEY="awn_defender",btn=document.getElementById("pledgeBtn"),out=document.getElementById("defCount"),shown=base;
+if(!btn)return;
+function fmt(n){return n<=base?"800+":String(n)}
+function setCount(n,anim){if(!anim||n<=shown||rm){shown=n;out.textContent=fmt(n);return}
+var from=shown,t0=null;shown=n;out.classList.remove("bump");void out.offsetWidth;out.classList.add("bump");
+requestAnimationFrame(function st(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1),e=1-Math.pow(1-p,3);out.textContent=p<1?String(Math.round(from+(n-from)*e)):fmt(n);if(p<1)requestAnimationFrame(st)})}
+function applyPledged(){btn.disabled=true;btn.innerHTML="<span>Thank you for loving animals ♥</span>"}
+var pledged=false;try{pledged=localStorage.getItem(KEY)==="1"}catch(e){}
+if(pledged){applyPledged();if(!COUNTER_URL)setCount(base+1,false)}
+if(COUNTER_URL)fetch(COUNTER_URL).then(function(r){return r.json()}).then(function(d){if(d&&d.count)setCount(d.count,false)}).catch(function(){});
+function ripple(x,y){if(rm)return;var fx=document.getElementById("fx"),W=innerWidth,H=innerHeight;
+var md=Math.max(Math.hypot(x,y),Math.hypot(W-x,y),Math.hypot(x,H-y),Math.hypot(W-x,H-y)),s=(md*2.1/24).toFixed(1);
+for(var i=0;i<5;i++){var r=document.createElement("div");r.className="rip"+(i===0?" f":i%2?" m":"");r.style.left=x+"px";r.style.top=y+"px";r.style.setProperty("--s",s);r.style.animationDelay=(i*0.22)+"s";r.addEventListener("animationend",function(){this.remove()});fx.appendChild(r)}
+for(var j=0;j<18;j++){var hh=document.createElement("div");hh.className="hrt";hh.innerHTML='<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-8-5.500-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></svg>';var a=Math.random()*6.283,d=90+Math.random()*230;hh.style.left=x+"px";hh.style.top=y+"px";hh.style.setProperty("--dx",Math.cos(a)*d+"px");hh.style.setProperty("--dy",Math.sin(a)*d-40+"px");hh.style.setProperty("--r",(Math.random()*80-40)+"deg");hh.style.animationDelay=(Math.random()*0.25)+"s";hh.addEventListener("animationend",function(){this.remove()});fx.appendChild(hh)}}
+var modal=document.getElementById("thanks"),cl=document.getElementById("thClose");
+function closeM(){modal.classList.remove("show");setTimeout(function(){modal.hidden=true},rm?0:600);try{btn.focus({preventScroll:true})}catch(e){}}
+function openM(n){document.getElementById("thText").textContent=n?"You are Animal Defender number "+n+". Together we speak for those who cannot.":"Thank you for standing with the animals. Together we speak for those who cannot.";
+document.getElementById("thShare").href="https://wa.me/?text="+encodeURIComponent("I just joined the Animal Defenders of The Animal Welfare Network. Be the HUMAN an ANIMAL needs when everyone FAILS them. https://bit.ly/TheAnimalWelfareNetworkBalochistan");
+setTimeout(function(){modal.hidden=false;requestAnimationFrame(function(){modal.classList.add("show");cl.focus()})},rm?0:900)}
+cl.addEventListener("click",closeM);modal.addEventListener("click",function(e){if(e.target===modal)closeM()});
+addEventListener("keydown",function(e){if(e.key==="Escape"&&!modal.hidden)closeM()});
+btn.addEventListener("click",function(ev){if(btn.disabled)return;var r=btn.getBoundingClientRect(),x=ev.clientX,y=ev.clientY;if(!x&&!y){x=r.left+r.width/2;y=r.top+r.height/2}
+try{localStorage.setItem(KEY,"1")}catch(e){}applyPledged();ripple(x,y);
+if(COUNTER_URL){fetch(COUNTER_URL+(COUNTER_URL.indexOf("?")>-1?"&":"?")+"action=pledge").then(function(r){return r.json()}).then(function(d){setCount(d.count,true);openM(d.count)}).catch(function(){setCount(base+1,true);openM(null)})}
+else{setCount(base+1,true);openM(null)}});
+})();
+</script>
+
+<script id="awn-plus-js">
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
+var noHover=matchMedia("(hover:none)").matches;
+
+/* 1: 3D logo tilt (pointer on desktop, gentle idle sway everywhere) */
+var L=document.getElementById("logo3d");
+if(L&&!rm){
+ var T=L.querySelector(".tilt"),hero=L.closest(".hero"),tx=0,ty=0,cx=0,cy=0,active=false,vis=true,raf=0;
+ hero.addEventListener("pointermove",function(e){var r=L.getBoundingClientRect();
+  tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(Math.max(innerWidth,700)/2)));
+  ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(Math.max(innerHeight,700)/2)));active=true},{passive:true});
+ hero.addEventListener("pointerleave",function(){active=false});
+ hero.addEventListener("pointercancel",function(){active=false});
+ function frame(t){if(window.__sc){raf=vis?requestAnimationFrame(frame):0;return}
+  var gx=active?tx:Math.sin(t/2300)*.5, gy=active?ty:Math.cos(t/3100)*.32;
+  cx+=(gx-cx)*.08;cy+=(gy-cy)*.08;
+  T.style.transform="rotateX("+(-cy*18).toFixed(2)+"deg) rotateY("+(cx*22).toFixed(2)+"deg)";
+  (L._g||(L._g=L.querySelector(".glare"))).style.setProperty("--gx",(50+cx*42).toFixed(1)+"%");
+  (L._g||(L._g=L.querySelector(".glare"))).style.setProperty("--gy",(40+cy*42).toFixed(1)+"%");
+  (L._g||(L._g=L.querySelector(".glare"))).style.setProperty("--go",(.22+.45*Math.min(1,Math.hypot(cx,cy))).toFixed(2));
+  raf=vis?requestAnimationFrame(frame):0}
+ if("IntersectionObserver" in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!raf)raf=requestAnimationFrame(frame)},{threshold:0}).observe(L)}
+ raf=requestAnimationFrame(frame);
+}
+
+/* 4: flip cards (tap on touch, hover on desktop, Enter/Space for keyboard) */
+document.querySelectorAll(".fl").forEach(function(c){
+ c.addEventListener("click",function(){if(noHover)c.classList.toggle("flipped")});
+ c.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();c.classList.toggle("flipped")}});
+ c.addEventListener("blur",function(){c.classList.remove("flipped")});
+});
+
+/* 5: tilt on pillars, role cards, book cover (mouse devices only) */
+if(fine&&!rm){
+ function tilt(el,max,lift){var f=0;el.classList.add("tilting");
+  el.addEventListener("pointermove",function(e){var r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+   cancelAnimationFrame(f);f=requestAnimationFrame(function(){
+    el.style.transform="perspective(900px) rotateX("+((.5-py)*max*2).toFixed(2)+"deg) rotateY("+((px-.5)*max*2).toFixed(2)+"deg) translateY(-"+lift+"px)";
+    el.style.setProperty("--gx",(px*100).toFixed(0)+"%");el.style.setProperty("--gy",(py*100).toFixed(0)+"%")})});
+  el.addEventListener("pointerleave",function(){cancelAnimationFrame(f);el.style.transform=""});}
+ document.querySelectorAll(".pillars .wrap>div,.role").forEach(function(el){tilt(el,6,4)});
+ document.querySelectorAll(".book > img").forEach(function(el){tilt(el,10,6)});
+}
+
+/* 6: animated counters */
+var cs=document.querySelectorAll("[data-count],[data-count-sel]");
+function fin(el){return el.dataset.countSel?document.querySelectorAll(el.dataset.countSel).length:(+el.dataset.count||0)}
+function show(el,n){el.textContent=n+(el.dataset.suffix||"")}
+cs.forEach(function(el){show(el,fin(el))});
+if(!rm&&"IntersectionObserver" in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);
+  var el=x.target,n=fin(el),t0=null;
+  requestAnimationFrame(function st(t){if(!t0)t0=t;var p=Math.min((t-t0)/1700,1),e=1-Math.pow(1-p,3);show(el,Math.round(n*e));if(p<1)requestAnimationFrame(st)})})},{threshold:.5});
+ cs.forEach(function(el){show(el,0);io.observe(el)});
+}
+
+/* 7: paw prints - cursor trail on desktop, and one walk across the hero */
+if(!rm){
+ function mk(cls,x,y,ang){var d=document.createElement("div");d.className="pw";d.innerHTML='<svg viewBox="0 0 24 24"><use href="#paw"/></svg>';
+  d.style.left=x+"px";d.style.top=y+"px";d.style.setProperty("--a",ang+"deg");d.addEventListener("animationend",function(){d.remove()});return d}
+ if(fine){
+  var box=document.createElement("div");box.id="paws";box.setAttribute("aria-hidden","true");document.body.appendChild(box);
+  var lx=null,ly=null,side=1;
+  addEventListener("pointermove",function(e){if(e.pointerType&&e.pointerType!=="mouse")return;
+   if(lx===null){lx=e.clientX;ly=e.clientY;return}
+   var dx=e.clientX-lx,dy=e.clientY-ly,d=Math.hypot(dx,dy);if(d<70)return;
+   var ang=Math.atan2(dx,-dy)*180/Math.PI,px=-dy/d*9*side,py=dx/d*9*side;side=-side;
+   lx=e.clientX;ly=e.clientY;if(box.children.length>20)return;
+   box.appendChild(mk("",e.clientX+px,e.clientY+py,ang))},{passive:true});
+ }
+ var walk=document.getElementById("walk");
+ if(walk){setTimeout(function(){
+  var w=walk.clientWidth,n=w<600?7:11;
+  for(var i=0;i<n;i++){var p=mk("",(0.05+0.9*i/(n-1))*w,(i%2?32:14),90+(i%2?10:-10));p.style.animationDelay=(i*0.34)+"s";walk.appendChild(p)}
+ },1400)}
+}
+})();
+</script>
+
+<script id="awn-plus2-js">
+(function(){
+var M=document.getElementById("medal");
+if(!M||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+var T=M.querySelector(".mtilt"),zone=M.closest(".founder"),tx=0,ty=0,cx=0,cy=0,act=false,vis=false,raf=0;
+zone.addEventListener("pointermove",function(e){var r=M.getBoundingClientRect();
+ tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(Math.max(innerWidth,700)/2)));
+ ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(Math.max(innerHeight,700)/2)));act=true},{passive:true});
+zone.addEventListener("pointerleave",function(){act=false});
+zone.addEventListener("pointercancel",function(){act=false});
+function frame(t){if(window.__sc){raf=vis?requestAnimationFrame(frame):0;return}
+ var gx=act?tx:Math.sin(t/2500)*.5,gy=act?ty:Math.cos(t/3300)*.3;
+ cx+=(gx-cx)*.08;cy+=(gy-cy)*.08;
+ T.style.transform="rotateX("+(-cy*16).toFixed(2)+"deg) rotateY("+(cx*20).toFixed(2)+"deg)";
+  raf=vis?requestAnimationFrame(frame):0}
+if("IntersectionObserver" in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!raf)raf=requestAnimationFrame(frame)},{threshold:0}).observe(M)}
+else{vis=true;raf=requestAnimationFrame(frame)}
+})();
+</script>
+
+<script id="awn-plus3-js">
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var foot=document.getElementById("contact");
+
+/* 1: closing motto, revealed word by word */
+var mf=document.getElementById("motoFoot");
+if(mf){
+ var idx=0;
+ Array.prototype.slice.call(mf.childNodes).forEach(function(n){
+  if(n.nodeType===3){var f=document.createDocumentFragment();
+   n.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;
+    if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(p));return}
+    var sp=document.createElement("span");sp.className="w";sp.style.setProperty("--i",idx++);sp.textContent=p;f.appendChild(sp)});
+   mf.replaceChild(f,n)}
+  else if(n.nodeType===1){n.classList.add("w","hl");n.style.setProperty("--i",idx++)}});
+ if(rm||!("IntersectionObserver" in window)){mf.classList.add("in")}
+ else{document.documentElement.classList.add("js-rv");
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){mf.classList.add("in");o.disconnect()}},{threshold:.6}).observe(mf)}
+}
+
+/* 3: rising hearts behind the footer (only while it is on screen) + pledge repeat */
+var hb=document.getElementById("fhearts"),timer=0;
+var HP='<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-8-5.500-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></svg>';
+var cols=["#E7D3A0","#C9A64F","#E58A6E","#F8EBC6"];
+function spawn(){if(hb.children.length>16)return;
+ var h=document.createElement("div"),sz=10+Math.random()*16;h.className="fh";h.innerHTML=HP;
+ h.style.width=h.style.height=sz+"px";h.style.left=(Math.random()*96)+"%";h.style.color=cols[Math.floor(Math.random()*cols.length)];
+ h.style.setProperty("--d",(6+Math.random()*5).toFixed(1)+"s");h.style.setProperty("--o",(.25+Math.random()*.4).toFixed(2));
+ h.style.setProperty("--dx",(Math.random()*90-45).toFixed(0)+"px");h.style.setProperty("--r",(Math.random()*50-25).toFixed(0)+"deg");
+ h.addEventListener("animationend",function(){h.remove()});hb.appendChild(h)}
+if(hb&&!rm&&"IntersectionObserver" in window){
+ new IntersectionObserver(function(es){if(es[0].isIntersecting){if(!timer){spawn();timer=setInterval(spawn,650)}}else{clearInterval(timer);timer=0}},{threshold:0}).observe(foot)}
+
+var b1=document.getElementById("pledgeBtn"),b2=document.getElementById("pledgeBtn2"),c1=document.getElementById("defCount"),c2=document.getElementById("defCount2");
+if(b1&&b2){
+ function sync(){if(b1.disabled){b2.disabled=true;b2.innerHTML="<span>Thank you for loving animals \u2665</span>"}}
+ sync();
+ new MutationObserver(sync).observe(b1,{attributes:true,attributeFilter:["disabled"]});
+ b2.addEventListener("click",function(e){if(b2.disabled)return;
+  var x=e.clientX,y=e.clientY;if(!x&&!y){var r=b2.getBoundingClientRect();x=r.left+r.width/2;y=r.top+r.height/2}
+  b1.dispatchEvent(new MouseEvent("click",{bubbles:true,cancelable:true,clientX:x,clientY:y}))});
+}
+if(c1&&c2){c2.textContent=c1.textContent;new MutationObserver(function(){c2.textContent=c1.textContent}).observe(c1,{childList:true,characterData:true,subtree:true})}
+
+/* 4: tilting 3D logo in the footer */
+var L=document.getElementById("flogo");
+if(L&&!rm){
+ var T=L.querySelector(".tilt"),tx=0,ty=0,cx=0,cy=0,act=false,vis=false,raf=0;
+ foot.addEventListener("pointermove",function(e){var r=L.getBoundingClientRect();
+  tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(Math.max(innerWidth,700)/2)));
+  ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(Math.max(innerHeight,700)/2)));act=true},{passive:true});
+ foot.addEventListener("pointerleave",function(){act=false});
+ foot.addEventListener("pointercancel",function(){act=false});
+ function frame(t){if(window.__sc){raf=vis?requestAnimationFrame(frame):0;return}
+  var gx=act?tx:Math.sin(t/2300)*.5,gy=act?ty:Math.cos(t/3100)*.32;
+  cx+=(gx-cx)*.08;cy+=(gy-cy)*.08;
+  T.style.transform="rotateX("+(-cy*18).toFixed(2)+"deg) rotateY("+(cx*22).toFixed(2)+"deg)";
+  (L._g||(L._g=L.querySelector(".glare"))).style.setProperty("--gx",(50+cx*42).toFixed(1)+"%");(L._g||(L._g=L.querySelector(".glare"))).style.setProperty("--gy",(40+cy*42).toFixed(1)+"%");
+  (L._g||(L._g=L.querySelector(".glare"))).style.setProperty("--go",(.22+.45*Math.min(1,Math.hypot(cx,cy))).toFixed(2));
+  raf=vis?requestAnimationFrame(frame):0}
+ if("IntersectionObserver" in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!raf)raf=requestAnimationFrame(frame)},{threshold:0}).observe(L)}
+ else{vis=true;raf=requestAnimationFrame(frame)}
+}
+})();
+</script>
+
+<script id="awn-plus4-js">
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var lb=document.getElementById("lb");if(!lb)return;
+var im=lb.querySelector("img"),cap=lb.querySelector(".lbc"),x=lb.querySelector(".lbx"),last=null;
+function open(t){var i=t.querySelector("img");im.src=i.currentSrc||i.src;im.alt=i.alt;
+ cap.textContent=t.querySelector("b").textContent+" \u00b7 "+t.querySelector("span").textContent;
+ last=t;lb.hidden=false;requestAnimationFrame(function(){lb.classList.add("on")});
+ document.documentElement.style.overflow="hidden";x.focus()}
+function close(){lb.classList.remove("on");document.documentElement.style.overflow="";
+ setTimeout(function(){lb.hidden=true;im.removeAttribute("src")},rm?0:250);
+ if(last){try{last.focus({preventScroll:true})}catch(e){}}}
+document.querySelectorAll(".ct").forEach(function(t){
+ t.addEventListener("click",function(e){if(e.target.closest("a"))return;open(t)});
+ t.addEventListener("keydown",function(e){if(e.target!==t)return;if(e.key==="Enter"||e.key===" "){e.preventDefault();open(t)}})});
+lb.addEventListener("click",function(e){if(e.target===lb||e.target===x)close()});
+addEventListener("keydown",function(e){if(e.key==="Escape"&&!lb.hidden)close()});
+})();
+</script>
+
+<script id="awn-plus5-js">
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
+
+/* map: pins pop one by one, list <-> pin highlighting, soft tilt */
+var mc=document.getElementById("mapcard"),mw=document.getElementById("mapwrap");
+if(mc&&mw){
+ var pins=mw.querySelectorAll(".pin"),rowsEl=mw.querySelectorAll(".place");
+ function act(k){pins.forEach(function(p){p.classList.toggle("act",p.dataset.k===k)});rowsEl.forEach(function(r){r.classList.toggle("act",r.dataset.k===k)})}
+ [].concat([].slice.call(pins),[].slice.call(rowsEl)).forEach(function(el){
+  el.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")act(el.dataset.k)});
+  el.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse")act(null)});
+  el.addEventListener("focus",function(){act(el.dataset.k)});
+  el.addEventListener("blur",function(){act(null)});
+  el.addEventListener("click",function(){act(el.dataset.k)})});
+ if(!rm&&"IntersectionObserver" in window){
+  mc.classList.add("arm");
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){mc.classList.add("go");o.disconnect()}},{threshold:.4}).observe(mc);
+ }else{mc.classList.add("go")}
+ if(fine&&!rm){var sv=document.getElementById("mapsvg");
+  mc.addEventListener("pointermove",function(e){var r=mc.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+   sv.style.transform="rotateX("+((.5-py)*7).toFixed(2)+"deg) rotateY("+((px-.5)*9).toFixed(2)+"deg)"});
+  mc.addEventListener("pointerleave",function(){sv.style.transform=""})}
+}
+
+/* quote carousel */
+var qc=document.getElementById("qc");
+if(qc){
+ var sl=[].slice.call(qc.querySelectorAll(".qs")),dt=[].slice.call(qc.querySelectorAll(".qd")),cur=0,timer=0,paused=false,seen=true;
+ function go(n,dir){n=(n+sl.length)%sl.length;if(n===cur)return;
+  var out=sl[cur],inn=sl[n];
+  inn.style.transition="none";inn.classList.remove("on","left","right");inn.classList.add(dir>0?"right":"left");void inn.offsetWidth;inn.style.transition="";
+  out.classList.remove("on");out.classList.add(dir>0?"left":"right");
+  inn.classList.remove("left","right");inn.classList.add("on");
+  dt[cur].classList.remove("on");dt[cur].removeAttribute("aria-current");dt[n].classList.add("on");dt[n].setAttribute("aria-current","true");cur=n}
+ function next(){go(cur+1,1)}function prev(){go(cur-1,-1)}
+ function arm(){clearInterval(timer);if(!rm&&sl.length>1)timer=setInterval(function(){if(!paused&&seen&&!document.hidden)next()},7500)}
+ qc.querySelector(".next").addEventListener("click",function(){next();arm()});
+ qc.querySelector(".prev").addEventListener("click",function(){prev();arm()});
+ dt.forEach(function(d,i){d.addEventListener("click",function(){go(i,i>cur?1:-1);arm()})});
+ qc.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")paused=true});
+ qc.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse")paused=false});
+ qc.addEventListener("focusin",function(){paused=true});qc.addEventListener("focusout",function(){paused=false});
+ qc.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){next();arm()}else if(e.key==="ArrowLeft"){prev();arm()}});
+ var sx=0,sy=0,down=false;
+ qc.addEventListener("pointerdown",function(e){if(e.target.closest("button"))return;down=true;sx=e.clientX;sy=e.clientY});
+ addEventListener("pointerup",function(e){if(!down)return;down=false;var dx=e.clientX-sx,dy=e.clientY-sy;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){dx<0?next():prev();arm()}});
+ if("IntersectionObserver" in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting},{threshold:.3}).observe(qc);
+ arm();
+}
+})();
+</script>
+
+<script id="awn-plus6-js">
+(function(){
+var cv=document.getElementById("bdgCanvas");if(!cv)return;
+var ctx=cv.getContext("2d"),W=1080,H=1350,SER='"Cormorant Garamond",Georgia,"Times New Roman",serif',BODY='Lora,Georgia,serif';
+var nameIn=document.getElementById("bdgName"),shareB=document.getElementById("bdgShare"),saveB=document.getElementById("bdgSave");
+var modal=document.getElementById("thanks"),pledgeBtn=document.getElementById("pledgeBtn"),logoImg=document.querySelector("#logo3d img");
+var URLTXT="https://bit.ly/TheAnimalWelfareNetworkBalochistan",blob=null,useLogo=true,tmr=0;
+try{nameIn.value=localStorage.getItem("awn_badge_name")||""}catch(e){}
+
+function spaced(t,x,y,sp){var ws=[],w=0,i;for(i=0;i<t.length;i++){var c=ctx.measureText(t[i]).width;ws.push(c);w+=c+(i<t.length-1?sp:0)}
+ var cx=x-w/2;ctx.textAlign="left";for(i=0;i<t.length;i++){ctx.fillText(t[i],cx,y);cx+=ws[i]+sp}}
+function segs(list,cx,y){var tot=0,i;list.forEach(function(g){ctx.font=g.f;g.w=ctx.measureText(g.t).width;tot+=g.w});
+ var x=cx-tot/2;ctx.textAlign="left";list.forEach(function(g){ctx.font=g.f;ctx.fillStyle=g.c;ctx.fillText(g.t,x,y);x+=g.w})}
+function paw(x,y,sz,rot,al){ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(sz/24,sz/24);ctx.globalAlpha=al;ctx.fillStyle="#E7D3A0";
+ ctx.beginPath();ctx.ellipse(0,4.2,5.2,4.2,0,0,6.283);ctx.fill();
+ [[-6.4,-1.6,2.1,2.7,-.31],[-2.2,-5.8,2.1,2.9,0],[2.2,-5.8,2.1,2.9,0],[6.4,-1.6,2.1,2.7,.31]].forEach(function(e){ctx.beginPath();ctx.ellipse(e[0],e[1],e[2],e[3],e[4],0,6.283);ctx.fill()});ctx.restore()}
+function gold(x0,y0,x1,y1){var g=ctx.createLinearGradient(x0,y0,x1,y1);g.addColorStop(0,"#E7D3A0");g.addColorStop(.35,"#FBEFC6");g.addColorStop(.6,"#C9A64F");g.addColorStop(.85,"#F2DC96");g.addColorStop(1,"#B08D3C");return g}
+function diamond(x,y,r){ctx.beginPath();ctx.moveTo(x,y-r);ctx.lineTo(x+r,y);ctx.lineTo(x,y+r);ctx.lineTo(x-r,y);ctx.closePath();ctx.fill()}
+
+function draw(){
+ var nm=(nameIn.value||"").replace(/\s+/g," ").trim().slice(0,28);
+ ctx.clearRect(0,0,W,H);
+ var bg=ctx.createRadialGradient(W/2,260,60,W/2,520,1000);bg.addColorStop(0,"#8C3512");bg.addColorStop(.5,"#6B2308");bg.addColorStop(1,"#3A1204");ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+ var gl=ctx.createRadialGradient(W/2,300,20,W/2,300,560);gl.addColorStop(0,"rgba(201,166,79,.28)");gl.addColorStop(1,"rgba(201,166,79,0)");ctx.fillStyle=gl;ctx.fillRect(0,0,W,H);
+ [[130,250,70,-.4],[940,330,60,.5],[110,820,64,.3],[975,900,72,-.3],[170,1180,58,.6],[920,1170,64,-.5],[540,1330,0,0]].forEach(function(q){if(q[2])paw(q[0],q[1],q[2],q[3],.07)});
+ /* borders */
+ ctx.strokeStyle="#C9A64F";ctx.lineWidth=5;ctx.strokeRect(36,36,W-72,H-72);
+ ctx.lineWidth=1.5;ctx.strokeRect(58,58,W-116,H-116);
+ ctx.fillStyle="#C9A64F";[[58,58],[W-58,58],[58,H-58],[W-58,H-58]].forEach(function(c){diamond(c[0],c[1],11)});
+ /* title */
+ ctx.fillStyle="#E7D3A0";ctx.font="600 34px "+SER;spaced("THE ANIMAL WELFARE NETWORK",W/2,128,9);
+ ctx.fillStyle="#C9A64F";diamond(W/2,158,6);ctx.fillRect(W/2-120,157,96,1.6);ctx.fillRect(W/2+24,157,96,1.6);
+ /* logo + rings */
+ var cx=W/2,cy=395;
+ ctx.save();ctx.strokeStyle=gold(cx-210,cy-210,cx+210,cy+210);ctx.lineWidth=7;ctx.beginPath();ctx.arc(cx,cy,190,0,6.283);ctx.stroke();
+ ctx.strokeStyle="rgba(231,211,160,.55)";ctx.lineWidth=2;ctx.setLineDash([3,9]);ctx.beginPath();ctx.arc(cx,cy,214,0,6.283);ctx.stroke();ctx.restore();
+ ctx.save();ctx.shadowColor="rgba(0,0,0,.45)";ctx.shadowBlur=30;ctx.shadowOffsetY=12;ctx.fillStyle="#6B2308";ctx.beginPath();ctx.arc(cx,cy,172,0,6.283);ctx.fill();ctx.restore();
+ if(useLogo&&logoImg&&logoImg.complete&&logoImg.naturalWidth){ctx.drawImage(logoImg,cx-175,cy-175,350,350)}
+ else{paw(cx,cy+10,150,0,.9)}
+ /* heading */
+ ctx.fillStyle="#E7D3A0";ctx.font="600 46px "+SER;spaced("I AM AN",W/2,690,16);
+ ctx.save();ctx.shadowColor="rgba(0,0,0,.5)";ctx.shadowBlur=14;ctx.shadowOffsetY=7;
+ ctx.fillStyle="#FBF8F1";ctx.font="700 150px "+SER;spaced("ANIMAL",W/2,825,10);
+ ctx.fillStyle=gold(210,860,870,960);ctx.font="700 150px "+SER;spaced("DEFENDER",W/2,960,8);ctx.restore();
+ /* name */
+ var y=1058;
+ if(nm){var fs=78;ctx.font="italic 600 "+fs+"px "+SER;while(ctx.measureText(nm).width>860&&fs>40){fs-=2;ctx.font="italic 600 "+fs+"px "+SER}
+  ctx.textAlign="center";ctx.fillStyle="#FBF8F1";ctx.fillText(nm,W/2,y)}
+ else{ctx.textAlign="center";ctx.fillStyle="#E7D3A0";ctx.font="italic 600 50px "+SER;ctx.fillText("Compassion \u00b7 Protection \u00b7 Rescue",W/2,y-6)}
+ ctx.fillStyle="#C9A64F";diamond(W/2,1094,6);ctx.fillRect(W/2-140,1093,110,1.6);ctx.fillRect(W/2+30,1093,110,1.6);
+ /* motto */
+ var it="italic 400 40px "+SER,bd="700 40px "+SER;
+ segs([{t:"\u201cBe the ",f:it,c:"#F1EADB"},{t:"HUMAN",f:bd,c:"#F2DC96"},{t:" an ",f:it,c:"#F1EADB"},{t:"ANIMAL",f:bd,c:"#F2DC96"},{t:" needs",f:it,c:"#F1EADB"}],W/2,1152);
+ segs([{t:"when everyone ",f:it,c:"#F1EADB"},{t:"FAILS",f:bd,c:"#F2DC96"},{t:" them\u201d",f:it,c:"#F1EADB"}],W/2,1202);
+ /* footer */
+ ctx.textAlign="center";ctx.fillStyle="#C9A64F";ctx.font="600 27px "+BODY;ctx.fillText("bit.ly/TheAnimalWelfareNetworkBalochistan",W/2,1262);
+ blob=null;
+ try{cv.toBlob(function(b){blob=b},"image/png")}
+ catch(e){if(useLogo){useLogo=false;draw()}}
+}
+function later(){clearTimeout(tmr);tmr=setTimeout(function(){draw();try{localStorage.setItem("awn_badge_name",nameIn.value.trim())}catch(e){}},180)}
+nameIn.addEventListener("input",later);
+function ready(){var f=document.fonts;if(f&&f.load){Promise.all([f.load("700 150px 'Cormorant Garamond'"),f.load("italic 600 60px 'Cormorant Garamond'"),f.load("italic 400 40px 'Cormorant Garamond'"),f.load("600 27px Lora")]).then(draw,draw)}else draw()}
+if(logoImg&&!logoImg.complete)logoImg.addEventListener("load",ready);
+(window.requestIdleCallback||function(f){setTimeout(f,400)})(ready);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){clearTimeout(tmr);tmr=setTimeout(draw,50)});
+
+function getBlob(cb){if(blob)return cb(blob);draw();setTimeout(function(){cv.toBlob(function(b){cb(b)},"image/png")},60)}
+function dl(b){var a=document.createElement("a"),u=URL.createObjectURL(b);a.href=u;a.download="animal-defender-badge.png";document.body.appendChild(a);a.click();setTimeout(function(){a.remove();URL.revokeObjectURL(u)},1500)}
+saveB.addEventListener("click",function(){getBlob(dl)});
+shareB.addEventListener("click",function(){
+ getBlob(function(b){
+  var f=null;try{f=new File([b],"animal-defender-badge.png",{type:"image/png"})}catch(e){}
+  var data={files:f?[f]:[],title:"I am an Animal Defender",text:"I am an Animal Defender with The Animal Welfare Network. Be the HUMAN an ANIMAL needs when everyone FAILS them. "+URLTXT};
+  if(f&&navigator.canShare&&navigator.canShare(data)&&navigator.share){navigator.share(data).catch(function(){})}
+  else{dl(b)}})});
+
+/* open the badge again later from the "Get my Defender badge" links */
+var links=[].slice.call(document.querySelectorAll(".blink"));
+function showLinks(){links.forEach(function(l){l.hidden=false})}
+if(pledgeBtn){if(pledgeBtn.disabled)showLinks();new MutationObserver(function(){if(pledgeBtn.disabled)showLinks()}).observe(pledgeBtn,{attributes:true,attributeFilter:["disabled"]})}
+links.forEach(function(l){l.addEventListener("click",function(){
+ document.getElementById("thText").textContent="Here is your Animal Defender badge. Share it so more people stand with the animals.";
+ modal.hidden=false;requestAnimationFrame(function(){modal.classList.add("show");nameIn.focus({preventScroll:true})})})});
+})();
+</script>
+
+<script id="awn-perf-js">
+(function(){
+if(!("IntersectionObserver" in window))return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("off",!e.isIntersecting)})},{rootMargin:"80px 0px"});
+document.querySelectorAll(".hero,main section,.pillars,footer").forEach(function(el){io.observe(el)});
+})();
+
+(function(){
+var root=document.documentElement;
+if(matchMedia("(prefers-reduced-motion: reduce)").matches){root.classList.add("lite");return}
+var sampling=false,frames=0,slow=0,last=0,done=false,scrollT=0;
+function loop(t){if(done)return;
+ if(last){frames++;if(t-last>34)slow++}last=t;
+ if(performance.now()-scrollT>250){sampling=false;last=0;return}
+ if(frames>=90){done=true;if(slow/frames>.3)root.classList.add("lite");return}
+ requestAnimationFrame(loop)}
+addEventListener("scroll",function(){scrollT=performance.now();if(!sampling&&!done){sampling=true;last=0;requestAnimationFrame(loop)}},{passive:true});
+})();
+</script>
+
+<script id="awn-smooth-js">
+(function(){
+if(!("IntersectionObserver" in window))return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("is-paused",!e.isIntersecting)})},{rootMargin:"60px"});
+document.querySelectorAll(".hero,#join,#faith,#places,footer,.medal,.fpledge,.pledgebox").forEach(function(el){io.observe(el)});
+})();
+</script>
+
+<script id="awn-smooth2-js">
+(function(){var t=0,h=document.documentElement;addEventListener("scroll",function(){if(!window.__sc){window.__sc=true;h.classList.add("scrolling")}clearTimeout(t);t=setTimeout(function(){window.__sc=false;h.classList.remove("scrolling")},160)},{passive:true})})();
+</script>
+
+<script id="awn-sessions-data">
+/* ================= UPCOMING SESSIONS: edit here =================
+   Add a session by copying the example line, removing the two slashes, and changing the words.
+   start / end use Pakistan time (+05:00). A session disappears by itself once it has finished.
+   With no sessions in the list, the page shows "Our next session is coming soon".
+   Fields: title, start, end, venue, speaker (optional), link (join link, optional), register (optional)
+*/
+window.AWN_SESSIONS=[
+ // {title:"Animal Welfare Awareness Session", start:"2026-11-15T20:00:00+05:00", end:"2026-11-15T21:00:00+05:00", venue:"Google Meet (online)", speaker:"Dr. Naveed, DVM", link:"https://meet.google.com/your-link", register:"https://forms.gle/your-form"},
+];
+</script>
+
+<script id="awn-plus7-js">
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- certificate & poster tilt ---- */
+if(!rm){
+ var els=[];
+ document.querySelectorAll('img[alt*="ertificate"],img[alt*="oster"]').forEach(function(im){var el=im.closest("figure")||im;if(els.indexOf(el)<0)els.push(el)});
+ els.forEach(function(el){
+  el.classList.add("tl3");var f=0,px=.5,py=.5;
+  function apply(){f=0;if(window.__sc)return;
+   el.style.transform="perspective(900px) rotateX("+((.5-py)*10).toFixed(2)+"deg) rotateY("+((px-.5)*12).toFixed(2)+"deg) translateY(-6px) scale(1.015)";
+   el.style.setProperty("--gx",(px*100).toFixed(0)+"%");el.style.setProperty("--gy",(py*100).toFixed(0)+"%")}
+  el.addEventListener("pointerenter",function(){el.classList.add("tl3-on")});
+  el.addEventListener("pointermove",function(e){if(window.__sc)return;var r=el.getBoundingClientRect();px=(e.clientX-r.left)/r.width;py=(e.clientY-r.top)/r.height;if(!f)f=requestAnimationFrame(apply)});
+  function off(){cancelAnimationFrame(f);f=0;el.style.transform="";el.classList.remove("tl3-on")}
+  el.addEventListener("pointerleave",off);el.addEventListener("pointercancel",off);
+  el.addEventListener("pointerup",function(e){if(e.pointerType!=="mouse")setTimeout(off,250)});
+ });
+}
+
+/* ---- upcoming sessions ---- */
+var host=document.getElementById("upc");
+if(host&&window.AWN_SESSIONS&&window.AWN_SESSIONS.length){
+ var now=Date.now(),list=window.AWN_SESSIONS.map(function(x){var st=new Date(x.start).getTime(),en=x.end?new Date(x.end).getTime():st+2*3600e3;return{t:x.title||"Awareness session",st:st,en:en,v:x.venue||"",sp:x.speaker||"",link:x.link||"",reg:x.register||""}})
+  .filter(function(x){return isFinite(x.st)&&x.en>now}).sort(function(a,b){return a.st-b.st});
+ if(list.length){
+  var TZ="Asia/Karachi";
+  function fmt(d,o){return new Intl.DateTimeFormat("en-GB",Object.assign({timeZone:TZ},o)).format(new Date(d))}
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function ics(x){function z(t){return new Date(t).toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"")}
+   function esc(t){return String(t).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n")}
+   var L=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//AWN//Sessions//EN","BEGIN:VEVENT","UID:"+x.st+"@awn","DTSTAMP:"+z(Date.now()),"DTSTART:"+z(x.st),"DTEND:"+z(x.en),"SUMMARY:"+esc(x.t),"LOCATION:"+esc(x.v),"DESCRIPTION:"+esc("The Animal Welfare Network"+(x.sp?" - with "+x.sp:"")+(x.link?"\nJoin: "+x.link:"")),"END:VEVENT","END:VCALENDAR"].join("\r\n");
+   var b=new Blob([L],{type:"text/calendar"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="awn-session.ics";document.body.appendChild(a);a.click();setTimeout(function(){a.remove();URL.revokeObjectURL(a.href)},1500)}
+  function gcal(x){function z(t){return new Date(t).toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"")}
+   return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(x.t)+"&dates="+z(x.st)+"/"+z(x.en)+"&location="+encodeURIComponent(x.v)+"&details="+encodeURIComponent("The Animal Welfare Network"+(x.sp?" - with "+x.sp:"")+(x.link?"\nJoin: "+x.link:""))}
+  host.textContent="";
+  var f=list[0],card=el("div","up-card glass"),main=el("div","up-main"),dt=el("div","up-date");
+  dt.appendChild(el("small",null,fmt(f.st,{month:"short"})));dt.appendChild(el("b",null,fmt(f.st,{day:"numeric"})));dt.appendChild(el("span",null,fmt(f.st,{weekday:"short"})));
+  var info=el("div","up-info");info.appendChild(el("h3",null,f.t));
+  info.appendChild(el("p",null,fmt(f.st,{hour:"numeric",minute:"2-digit",hour12:true}).toUpperCase()+" - "+fmt(f.en,{hour:"numeric",minute:"2-digit",hour12:true}).toUpperCase()+" (Pakistan time)"));
+  if(f.v)info.appendChild(el("p",null,f.v));if(f.sp)info.appendChild(el("p","sp","With "+f.sp));
+  var cd=el("div","up-cd"),parts={};["Days","Hours","Min","Sec"].forEach(function(n){var d=el("div"),b=el("b",null,"00");d.appendChild(b);d.appendChild(el("span",null,n));cd.appendChild(d);parts[n]=b});
+  info.appendChild(cd);var now2=el("span","up-now","Happening now");now2.hidden=true;info.appendChild(now2);
+  var act=el("div","up-act");
+  if(f.link){var a=el("a","btn gold","Join the session");a.href=f.link;a.target="_blank";a.rel="noopener";act.appendChild(a)}
+  if(f.reg){var r=el("a","btn alt","Register");r.href=f.reg;r.target="_blank";r.rel="noopener";act.appendChild(r)}
+  var g=el("a","btn alt","Google Calendar");g.href=gcal(f);g.target="_blank";g.rel="noopener";act.appendChild(g);
+  var ib=el("button","btn alt","Add to calendar");ib.type="button";ib.addEventListener("click",function(){ics(f)});act.appendChild(ib);
+  info.appendChild(act);main.appendChild(dt);main.appendChild(info);card.appendChild(main);host.appendChild(card);
+  if(list.length>1){var ul=el("div","up-list");list.slice(1).forEach(function(x){var m=el("div","up-mini glass"),d=el("div","d");d.appendChild(el("small",null,fmt(x.st,{month:"short"})));d.appendChild(document.createTextNode(fmt(x.st,{day:"numeric"})));
+   var t=el("div","t");t.appendChild(el("b",null,x.t));t.appendChild(el("span",null,fmt(x.st,{weekday:"long"})+", "+fmt(x.st,{hour:"numeric",minute:"2-digit",hour12:true}).toUpperCase()+(x.v?" - "+x.v:"")));
+   var c=el("button","btn alt","Add");c.type="button";c.style.padding="8px 18px";c.addEventListener("click",function(){ics(x)});
+   m.appendChild(d);m.appendChild(t);m.appendChild(c);ul.appendChild(m)});host.appendChild(ul)}
+  function pad(n){return n<10?"0"+n:String(n)}
+  function tick(){var d=f.st-Date.now();
+   if(d<=0){cd.hidden=true;now2.hidden=Date.now()>f.en;return}
+   var s=Math.floor(d/1000);parts.Days.textContent=pad(Math.floor(s/86400));parts.Hours.textContent=pad(Math.floor(s%86400/3600));parts.Min.textContent=pad(Math.floor(s%3600/60));parts.Sec.textContent=pad(s%60)}
+  tick();var vis=false;
+  if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)tick()}).observe(host);else vis=true;
+  setInterval(function(){if(vis&&!window.__sc&&!document.hidden)tick()},1000);
+ }
+}
+
+/* ---- 3D book: drag to turn, tap to flip ---- */
+var bk=document.getElementById("bk"),bi=document.getElementById("bkIn");
+if(bk&&bi){
+ var ry=0,rx=0,tr=0,tx=0,drag=false,sx=0,sy=0,r0=0,x0=0,moved=0,lastDx=0,raf=0;
+ function loop(){ry+=(tr-ry)*.16;rx+=(tx-rx)*.16;bi.style.transform="rotateY("+ry.toFixed(2)+"deg) rotateX("+rx.toFixed(2)+"deg)";
+  if(drag||Math.abs(tr-ry)>.15||Math.abs(tx-rx)>.15)raf=requestAnimationFrame(loop);else raf=0}
+ function kick(){if(!raf)raf=requestAnimationFrame(loop)}
+ bk.addEventListener("pointerdown",function(e){drag=true;moved=0;sx=e.clientX;sy=e.clientY;r0=tr;x0=tx;lastDx=0;bk.classList.add("drag");try{bk.setPointerCapture(e.pointerId)}catch(x){}kick()});
+ bk.addEventListener("pointermove",function(e){if(!drag)return;var dx=e.clientX-sx,dy=e.clientY-sy;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));  tr=r0+dx*.7;tx=Math.max(-24,Math.min(24,x0-dy*.3));kick()});
+ function end(e){if(!drag)return;drag=false;bk.classList.remove("drag");
+  if(moved<6&&e&&e.type==="pointerup"){tr=Math.round(tr/180)*180+180}
+  tx=0;kick()}
+ bk.addEventListener("pointerup",end);bk.addEventListener("pointercancel",end);
+}
+
+/* ---- install the app ---- */
+var ib2=document.getElementById("installBtn"),note=document.getElementById("instNote"),dp=null;
+var standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.MSStream;
+if(ib2&&!standalone){
+ addEventListener("beforeinstallprompt",function(e){e.preventDefault();dp=e;ib2.hidden=false});
+ addEventListener("appinstalled",function(){ib2.hidden=true;note.hidden=true;dp=null});
+ if(ios&&/safari/i.test(navigator.userAgent)&&!/crios|fxios/i.test(navigator.userAgent))ib2.hidden=false;
+ ib2.addEventListener("click",function(){if(dp){dp.prompt();dp.userChoice.then(function(){dp=null;ib2.hidden=true},function(){})}else{note.hidden=!note.hidden}});
+}
+if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]')&&/^https?:$/.test(location.protocol)){
+ addEventListener("load",function(){navigator.serviceWorker.register("sw.js").then(function(reg){
+  function ask(w){if(window.AWN_showUpdate)window.AWN_showUpdate(w)}
+  if(reg.waiting&&navigator.serviceWorker.controller)ask(reg.waiting);
+  reg.addEventListener("updatefound",function(){var nw=reg.installing;if(!nw)return;nw.addEventListener("statechange",function(){if(nw.state==="installed"&&navigator.serviceWorker.controller)ask(nw)})});
+  document.addEventListener("visibilitychange",function(){if(!document.hidden)reg.update().catch(function(){})});
+  setInterval(function(){reg.update().catch(function(){})},1800000);
+ }).catch(function(){})});
+ var rl=false;navigator.serviceWorker.addEventListener("controllerchange",function(){if(!window.__wantReload||rl)return;rl=true;location.reload()});
+}
+})();
+</script>
+<div class="upd" id="updToast" role="status" hidden><span>A new version is ready.</span><button type="button" class="go">Refresh</button><button type="button" class="later">Later</button></div>
+
+<script id="awn-supporters-data">
+/* ================= HALL OF SUPPORTERS: edit here =================
+   To add someone, copy a line, change the name and the sentence, and keep the comma at the end.
+   A photo is optional: upload the picture to GitHub and add  photo:"file-name.webp"  to the line. */
+window.AWN_SUPPORTERS=[
+ {name:"Samreen Zafar", note:"Always there for donations and help"},
+ {name:"Bashair Kareem", note:"Spoke for animal rights in Khulli Kacheri, Khuzdar"},
+ // {name:"Full Name", note:"One line about how they helped", photo:"photo-file-name.webp"},
+];
+</script>
+
+<script id="awn-plus8-js">
+(function(){
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- slow fade-in for every picture ---- */
+var imgs=[].slice.call(document.querySelectorAll("img.fi"));
+function reveal(im){if(im.classList.contains("fi-go"))return;
+ var go=function(){im.classList.add("fi-go")};
+ if(im.complete&&im.naturalWidth){(im.decode?im.decode():Promise.resolve()).then(go,go)}
+ else{im.addEventListener("load",go,{once:true});im.addEventListener("error",go,{once:true})}}
+var fio=null;
+if("IntersectionObserver" in window){fio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){fio.unobserve(e.target);reveal(e.target)}})},{rootMargin:"60px 0px"});imgs.forEach(function(im){fio.observe(im)})}
+else imgs.forEach(reveal);
+window.__fiReady=true;
+
+/* ---- winter ribbon: November to February (add ?winter to the address to preview it) ---- */
+var w=document.getElementById("wint");
+if(w){var d=new Date(),mo=d.getMonth(),season=(mo<=1?d.getFullYear()-1:d.getFullYear()),key="awn_winter_"+season,closed=false;
+ try{closed=localStorage.getItem(key)==="1"}catch(e){}
+ var inSeason=(mo>=10||mo<=1)||/[?&]winter\b/.test(location.search);
+ if(inSeason&&(!closed||/[?&]winter\b/.test(location.search)))w.hidden=false;
+ w.querySelector("button").addEventListener("click",function(){w.hidden=true;try{localStorage.setItem(key,"1")}catch(e){}})}
+
+/* ---- hall of supporters ---- */
+var hall=document.getElementById("hall");
+if(hall&&window.AWN_SUPPORTERS){
+ function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+ window.AWN_SUPPORTERS.forEach(function(p){if(!p||!p.name)return;
+  var card=el("div","hs glass"),av=el("div","hs-av");
+  if(p.photo){var im=el("img");im.src=p.photo;im.alt=p.name;im.loading="lazy";av.appendChild(im)}
+  else{var ini=p.name.trim().split(/\s+/).map(function(x){return x.charAt(0)}).slice(0,2).join("").toUpperCase();av.appendChild(el("span",null,ini))}
+  card.appendChild(av);card.appendChild(el("h3",null,p.name));card.appendChild(el("div","hs-rule"));if(p.note)card.appendChild(el("p",null,p.note));
+  hall.appendChild(card)});
+}
+
+/* ---- "new version is ready" message (installed app on your own hosting) ---- */
+var tw=document.getElementById("updToast");
+window.AWN_showUpdate=function(worker){
+ if(!tw)return;tw.hidden=false;requestAnimationFrame(function(){tw.classList.add("on")});
+ tw.querySelector(".go").onclick=function(){window.__wantReload=true;try{worker.postMessage("SKIP_WAITING")}catch(e){location.reload()}};
+ tw.querySelector(".later").onclick=function(){tw.classList.remove("on");setTimeout(function(){tw.hidden=true},500)};
+};
+})();
+</script>
+</body>
+</html>
