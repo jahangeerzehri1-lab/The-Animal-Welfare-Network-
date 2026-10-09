@@ -1459,8 +1459,8 @@ if(ib2&&!standalone){
  if(ios&&/safari/i.test(navigator.userAgent)&&!/crios|fxios/i.test(navigator.userAgent))ib2.hidden=false;
  ib2.addEventListener("click",function(){if(dp){dp.prompt();dp.userChoice.then(function(){dp=null;ib2.hidden=true},function(){})}else{note.hidden=!note.hidden}});
 }
-if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]')&&/^https?:$/.test(location.protocol)){
- addEventListener("load",function(){navigator.serviceWorker.register("sw.js").then(function(reg){
+if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest.webmanifest"]')&&/^https?:$/.test(location.protocol)){
+ addEventListener("load",function(){navigator.serviceWorker.register(""sw_2.sw_2.").then(function(reg){
   function ask(w){if(window.AWN_showUpdate)window.AWN_showUpdate(w)}
   if(reg.waiting&&navigator.serviceWorker.controller)ask(reg.waiting);
   reg.addEventListener("updatefound",function(){var nw=reg.installing;if(!nw)return;nw.addEventListener("statechange",function(){if(nw.state==="installed"&&navigator.serviceWorker.controller)ask(nw)})});
