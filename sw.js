@@ -1,4 +1,5 @@
-importScripts("badge-sw.js");/* AWN service worker: makes the site installable and usable offline.
+importScripts("badge-sw.js");
+/* AWN service worker: makes the site installable and usable offline.
    To publish an update, change VERSION below (for example awn-v2). */
 var VERSION = "awn-v6";
 var CORE = "core-" + VERSION;
