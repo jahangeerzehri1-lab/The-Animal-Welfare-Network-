@@ -1,0 +1,76 @@
+name: AWN push notifications
+
+on:
+  # 1) Every day at 9:00 AM Pakistan time: send one kindness quote
+  schedule:
+    - cron: "0 4 * * *"
+  # 2) Whenever you change sw.js (your update number): tell everyone there is an update
+  push:
+    branches: [main]
+    paths: ["sw.js"]
+  # 3) Manual button: Actions tab > AWN push notifications > Run workflow
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Custom message (leave empty to send today's quote)"
+        required: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Send push through OneSignal
+        env:
+          EVENT: ${{ github.event_name }}
+          CUSTOM: ${{ github.event.inputs.message }}
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+        run: |
+          node - <<'JS'
+          const fs = require("fs");
+          const SITE = "https://jahangeerzehri1-lab.github.io/The-Animal-Welfare-Network-/";
+          const ev = process.env.EVENT, custom = (process.env.CUSTOM || "").trim();
+          const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+          (async () => {
+            let title, body;
+            if (ev === "push") {
+              await sleep(150000); // give GitHub Pages time to publish the new version
+              title = "AWN: new update ready";
+              body = "We added something new. Open the app to see it.";
+            } else if (custom) {
+              title = "Animal Welfare Network";
+              body = custom;
+            } else {
+              const quotes = JSON.parse(fs.readFileSync("quotes.json", "utf8"));
+              const q = quotes[Math.floor(Date.now() / 86400000) % quotes.length];
+              title = "\u{1F43E} A kind reminder";
+              body = "\u201C" + q.t + "\u201D \u2014 " + q.s;
+            }
+            const payload = {
+              app_id: process.env.ONESIGNAL_APP_ID,
+              target_channel: "push",
+              included_segments: ["Total Subscriptions"],
+              headings: { en: title },
+              contents: { en: body },
+              url: SITE,
+              chrome_web_icon: SITE + "icon-192.png",
+              chrome_web_badge: SITE + "notif-badge.png",
+            };
+            if (process.env.DRY_RUN) { console.log(JSON.stringify(payload, null, 1)); return; }
+            const res = await fetch("https://api.onesignal.com/notifications?c=push", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                Authorization: "Key " + process.env.ONESIGNAL_API_KEY,
+              },
+              body: JSON.stringify(payload),
+            });
+            const text = await res.text();
+            console.log(res.status, text);
+            if (!res.ok) process.exit(1);
+          })();
+          JS
