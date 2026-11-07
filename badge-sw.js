@@ -3,6 +3,9 @@
    when a new version of the site has been deployed.
    Loaded from sw.js with:  importScripts("badge-sw.js");  (first line of sw.js) */
 
+/* OneSignal push support (safe if it cannot load) */
+try{importScripts("https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js");}catch(e){}
+
 function awnSetBadge(n){
   try{
     if(n>0&&self.navigator&&navigator.setAppBadge)return navigator.setAppBadge(n).catch(function(){});
@@ -27,7 +30,7 @@ self.addEventListener("periodicsync",function(event){
       }
       if(reg.waiting){
         await awnSetBadge(1);
-        try{if(self.Notification&&Notification.permission==="granted")await reg.showNotification("AWN: new update ready",{body:"Open the app to get the latest version.",tag:"awn-update",icon:"icon-192.png",badge:"icon-192.png"})}catch(e){}
+        try{if(self.Notification&&Notification.permission==="granted")await reg.showNotification("AWN: new update ready",{body:"Open the app to get the latest version.",tag:"awn-update",icon:"icon-192.png",badge:"notif-badge.png"})}catch(e){}
       }
     }catch(e){}
   })());
@@ -46,6 +49,7 @@ self.addEventListener("push",function(event){
 
 /* Tapping the notification opens the app. */
 self.addEventListener("notificationclick",function(event){
+  if(event.notification.tag!=="awn-update")return; /* OneSignal handles its own notifications */
   event.notification.close();
   event.waitUntil(self.clients.matchAll({type:"window",includeUncontrolled:true}).then(function(list){
     for(var i=0;i<list.length;i++){if("focus" in list[i])return list[i].focus()}
