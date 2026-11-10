@@ -1,7 +1,7 @@
 importScripts("badge-sw.js");
 /* AWN service worker: makes the site installable and usable offline.
    To publish an update, change VERSION below (for example awn-v2). */
-var VERSION = "awn-v11";
+var VERSION = "awn-v12";
 var CORE = "core-" + VERSION;
 var RUNTIME = "runtime-" + VERSION;
 var PRECACHE = [
